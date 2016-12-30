@@ -1,0 +1,15 @@
+#footer{
+	min-height: 10%;
+
+  background-color: map-get($color-basic, black-light);
+  color: map-get($color-basic, white);
+  font-size: $font-size--base * .7;
+  text-align: center;
+
+}
+
+.footer-block{
+	> p{
+		margin: .8em 0px .2em 0px;
+	}
+}

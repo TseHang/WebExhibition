@@ -1,0 +1,61 @@
+/*
+ *	Breakpoint
+ */
+
+$break-point:(
+	mobile-s: 240px,
+	mobile-l: 320px,
+	table-s:  480px,
+	table-l:  768px,
+	screen-s:1024px,
+	screen-l:1280px
+);
+
+/*
+ *	Color
+ */
+
+$color-basic: (
+	white: #FFF,
+	green: #02B875,
+	blue:  #3FA9F5,
+	skin:  #FCF6F0,
+	gray-dark: 	#808080,
+	black-hard: #000000,
+	black-light:#2A2B2A,
+);
+
+$color-block:(
+	blue:  #3FA9F5,
+	green: #02B875,
+	red-pink:  	#EC8D81,
+	yellow-earthy: #E7B788,
+	green-pink: #87C5A4,
+	purple: #8D82C4
+);
+
+
+// component、state
+$color-default--bg: map-get($color-basic, white);
+$color-board-major:	map-get($color-basic, blue);
+
+/*
+ *	Font
+ */
+
+$letter-spacing:(
+	s: 2px,
+	m: 4px,
+	l: 6px
+);
+
+$font-size--base: 16px;
+
+$font-noto: 'Noto Sans TC', sans-serif;
+$font-default: "Roboto Condensed",
+"Georgia",
+"Xin Gothic",
+"Hiragino Sans GB",
+"Droid Sans Fallback",
+"Microsoft YaHei",
+sans-serif;

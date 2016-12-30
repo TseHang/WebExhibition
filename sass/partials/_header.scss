@@ -1,0 +1,60 @@
+.menu {
+  @extend %position_relative;
+  z-index: 1000;
+  width: 80%;
+  left: 10%;
+  top: 3em;
+  margin-bottom:3em;
+  font-size: .8em;
+  color: map-get($color-basic, gray-dark);
+  > ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  .list {
+    @extend %position_relative;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    width: 16.6%;
+    padding: 0px .3em;
+    text-align: center;
+    letter-spacing: 4px;
+    line-height: 1em;
+    &:nth-child(1) {
+      border-left: solid 2px;
+    }
+    &:nth-child(6) {
+      border-right: solid 2px;
+    }
+
+    &:after{
+      @include transition(all .2s linear);
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      bottom: -1em;
+      left: 25%;
+      background-color: map-get($color-basic, gray-dark);
+
+      opacity: 0;
+    }
+
+    &:hover{
+      color: map-get($color-basic, black-hard);
+
+      &:after{
+        opacity: 1;
+        bottom: -.5em;
+      }
+    }
+  }
+
+  @media (min-width: map-get($break-point, table-l)){
+    position: absolute;
+    font-size: 1em;
+  }
+}

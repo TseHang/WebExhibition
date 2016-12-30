@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html style = "height:100%;width:100%;margin:0px;">
+<head>
+  {{> head}}
+
+  <title> WebExhibition - {{title}}</title>
+  <link rel="stylesheet" href = "./dist/css/3dvr.css">
+</head>
+<body>
+
+	<header>
+		<div class="header-content">
+			<h1>${header.title}</h1>
+			<p class="p-font-400">${header.subTitle}</p>
+		</div>
+	</header>
+
+	<nav>
+		<h3>展場 Demo</h3>
+	</nav>
+
+	<section>
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">目標問題</h1>
+		</div>
+
+		<div class="row">
+			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
+				<p>網頁已經可以呈現3D擬真實境效果。</p>
+
+				<p>
+				但是<span class="color-blue">目前使用還不是非常流暢</span>。
+					<br>
+				因此我開始深思，哪些應用是存在3D體驗的必要性？又哪些應用可以因為有了3D的體驗而更創新？
+				</p>
+			</div>
+		</div>
+
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">如何思考</h1>
+		</div>
+		
+		<div class="row">
+			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
+				<ul>
+					<li>雖說技術已經成熟，但使用上還不夠流暢</li>
+
+					<li>有什麼特殊的領域，必須使用 WebVR，而不是原生VR？</li>
+
+					<li>WebVR 的優勢在哪裡？</li>
+
+					<li>Web 3D技術的優勢在哪裡？</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">專案成果</h1>
+		</div>
+
+		<div class="row">
+			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+				<div id="board-theMosquitoMan" class="board-img" onclick="window.open('//www.denguefever.tw');"></div>
+				<div class="board-content">
+					<h2>展場 Demo</h2>
+					<p class="color-green">一個針對手機版 WebVR 的小Demo</p>
+					<br>
+					<div class="link">
+						<a href="//www.denguefever.tw" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+						<a href="//www.denguefever.tw"><i class="fa fa-github" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="circle"></div>
+			</div>
+		</div>
+
+	</section>
+
+	<footer class="footer">
+		{{> block-footer}}
+	</footer>
+
+
+</body>
+<script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+<script type="text/javascript" src="dist/js/block-3dvr.js"></script>
+
+</html>

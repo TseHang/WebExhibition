@@ -1,0 +1,16 @@
+
+@mixin traingle-left($color, $width){
+  background: transparent;
+	border-color: $color transparent transparent $color;
+  border-style: solid;
+  border-width: $width;
+}
+
+
+@mixin circle-hollow($color ,$r ,$border-width ){
+  width: $r;
+  height: $r;
+  border: solid $border-width $color;
+  border-radius: 100%;
+  background: transparent;
+}

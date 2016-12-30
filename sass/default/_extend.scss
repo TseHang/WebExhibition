@@ -1,0 +1,50 @@
+%position_relative{
+	position: relative;
+}
+
+%position_absolute{
+	position: absolute;
+}
+
+%board-title{
+	color: map-get($color-basic, black-hard);
+	text-align: center;
+
+	h1{
+		@extend %position_relative;
+		&:after{
+	    content: '';
+	    position: absolute;
+	    bottom: -5px;
+	    left: 10%;
+	    width: 80%;
+	    height: .3em;
+	    background-color: map-get($color-basic, green);
+		}
+	}
+}
+
+%board-content{
+	@extend %position_relative;
+	background-color: map-get($color-basic, skin);
+  padding: 1.5rem 1rem .2rem;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  .circle{
+		@include circle-hollow($color-board-major, 3em, 5px);
+		@include transition(all .2s ease-in);
+		position: absolute;
+	  right: -1em;
+	  bottom: -1em;
+	}
+
+  &:before{
+  	@extend %position_absolute;
+  	@include traingle-left($color-board-major, 1.3em);
+  	@include transition(all .2s ease-in);
+  	content: '';
+  	top: 0px;
+  	left: 0px;
+  }
+}

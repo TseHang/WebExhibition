@@ -1,0 +1,146 @@
+$pojoro:(
+	font-size: 1.2em,
+	line-height: 1.2em,
+	wings-ani-time: 0.5s,
+	wings-width: 3em,
+	wings-height: .4em
+);
+
+.pojoro  {
+	@include border-radius(100%);
+	@include transition(all .8s ease-in-out);
+	background-color: map-get($color-basic, white);
+	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 40%,rgba(51,51,51,1) 100%);
+	
+	/* box-shadow: secondary color, body, eyelash */
+	
+	box-shadow:0 0 0 0.2em rgb(146,89,149), 
+				0 0 0.1em 0.55em rgb(176,89,179), 
+				inset 0 0.2em 0 0 rgb(136,79,139);
+	
+	/* ojo (eye) */
+	
+	color: rgba( 40, 40, 40, 0.8);
+	font-size: map-get($pojoro, font-size);
+	line-height: map-get($pojoro, line-height);
+	padding-left: 0.18em;
+	-webkit-font-smoothing: antialiased;
+	user-select: none;
+	
+	/* usability, position and transition */
+	cursor: pointer;
+	position: relative;
+
+	width: 1em;
+	height: 1em;
+	margin: 5em auto 0 auto;
+	transform-origin: center;
+	
+	/* Separate the animations to have a better control over the eye and the body */
+	animation: eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite; 
+
+	/* Elevate and distort the creature. */
+	transform: scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);	
+
+	&:before, &:after{
+		/* wings */
+
+		@include border-radius(100%);
+		background-color: map-get($color-basic, white);
+		content: "";
+		
+		/* display:none, hide wings */
+		position: absolute;
+		-webkit-filter: blur(1px);
+		transition: all 0.2s;
+		animation-duration: map-get($pojoro, wings-ani-time);
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+
+		background: rgba(100,100,100,0.8);
+	
+		/* display:block, we allow the wings to appear and the animation starts */
+		
+		display: block;
+		margin-left: 0em;
+		width: map-get($pojoro, wings-width);
+		height: map-get($pojoro, wings-height);
+	}
+
+	&:before{
+		top: 25%;
+		left: 2.65em;
+		margin-left: -1em;
+		transform-origin: left;
+		transform: rotate(-60deg);
+		animation-name: wings;
+	}
+
+	&:after{
+		top: 25%;
+		left: -4.5em;
+		margin-left: 1em;
+		transform-origin: right;
+		transform: rotate(60deg);
+		animation-name: wings2;
+	}
+
+	@media (min-width: map-get($break-point, screen-l)){
+		&:before, &:after{
+			display: none;
+			animation-duration: .3s;
+		}
+
+		&:hover{
+			&:before, &:after{
+				display: block;
+			}
+		}
+	}
+} 
+
+// /* Elevate and distort the creature. */
+@keyframes eye  {
+
+	/* Eye movement */
+	
+	5%, 10%  {
+		line-height: 1.2em;
+		padding-left: 0em;
+	}
+	15%, 20%  {
+		line-height: 1.15em;
+		padding-left: 0.4em;
+	}
+	
+	/* Eyelash movement */
+	
+	25%  {
+		box-shadow: 0 0 0 0.2em rgb(146,89,149), 
+					0 0 0.1em 0.55em rgb(166,89,169), 
+					inset 0 1em 0 0 rgb(136,79,139);
+	}
+	23%, 27%  {
+		box-shadow: 0 0 0 0.2em rgb(146,89,149), 
+					0 0 0.1em 0.55em rgb(166,89,169), 
+					inset 0 0.2em 0 0 rgb(136,79,139);
+	}
+}
+
+@keyframes body  {
+	50%  {
+		width: 1.4em; height: 1.4em;
+	} 
+}
+
+@keyframes wings  {
+	50%  {
+		transform: rotate(65deg);
+	}
+}
+
+@keyframes wings2  {
+	50%  {
+		transform: rotate(-65deg);
+	}
+}

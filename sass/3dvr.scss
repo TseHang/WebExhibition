@@ -1,0 +1,45 @@
+@import 'default/default';
+@import 'layout/page';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/pojoro';
+
+$main-color: map-get($color-block, blue);
+
+header{
+	@extend %position_relative;
+	background: white url(../img/logo.svg) space;
+  background-size: contain;
+}
+
+.header-content{
+	opacity: 0.97;
+
+	&:hover{
+		opacity: 0.9;		
+	}
+}
+
+.footer{
+	background-color: $main-color;
+}
+
+.contact{
+	padding-top: 1em;
+	text-align: center;
+}
+
+.section-board{
+	&:before{
+		border-color: $main-color transparent transparent $main-color;
+	}
+	
+	.circle{
+		border-color: $main-color;
+	}
+
+	.board-img{
+		background: url(../img/theMosquitoMan.png) no-repeat ;
+		background-size: cover;
+	}
+}
