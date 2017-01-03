@@ -1,22 +1,12 @@
 /*
  *	color
  */
-.color-black--hard{
-	color: map-get($color-basic, black-hard);
-}
 
-.color-blue{
-	color: map-get($color-basic, blue);
+@each $name, $color in $color-block {
+  .color-#{$name} {
+    color: $color;
+  }
 }
-
-.color-green{
-	color: map-get($color-basic, green);
-}
-
-.color-red--pink{
-	color: map-get($color-block, red-pink);
-}
-
 
 /*
  *	font

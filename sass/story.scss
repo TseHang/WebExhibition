@@ -4,22 +4,29 @@
 @import 'partials/footer';
 @import 'partials/pojoro';
 
-$main-color: map-get($color-block, blue);
+$main-color: map-get($color-block, green-pink);
 
 header{
 	@extend %position_relative;
-	background: transparent url(../img/3dvr.jpg) ;
+	background: transparent url(../img/story.png) ;
   background-size: cover;
 }
 
 .header-content{
-	background-color: rgba(63, 169, 245, .7);
+	background-color: rgba(135, 197, 164, 0.9);
 
 	&:hover{
-		background-color: rgba(63, 169, 245, .3);
+		background-color: rgba(135, 197, 164, 0.5);
 	}
 }
 
+nav{
+	h3{
+		&:nth-child(1){
+			border-right: solid 0px;
+		}
+	}
+}
 .footer{
 	background-color: $main-color;
 }
@@ -47,7 +54,17 @@ header{
 	}
 
 	.board-img{
-		background: url(../img/3dvr_demo.png) no-repeat ;
+		background: url(../img/review2015.png) no-repeat ;
 		background-size: cover;
 	}
+}
+
+#board-happiness{
+	background: url(../img/happiness.png) no-repeat ;
+	background-size: cover;
+
+	&:hover{
+  	background-position: 30% 30%;
+  	background-size: 130%;
+  }
 }

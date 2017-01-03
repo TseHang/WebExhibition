@@ -3,7 +3,7 @@ body{
 }
 
 header{
-	height: 25%;
+	height: 32%;
 	min-height: 200px;
 	color: white;
 
@@ -15,6 +15,16 @@ header{
 	p{
 		padding-left: 1em;
 		padding-right: 1em;
+	}
+
+	a{
+		padding-left: 1em;
+    font-size: 1.3em;
+    width: 3em;
+
+    &:hover{
+    	opacity: .4;
+    }
 	}
 }
 
@@ -117,13 +127,13 @@ nav{
 	color: map-get($color-basic, white);
 
 	> ul{
-		width: 90%;
+		width: 95%;
     
     display: flex;
     justify-content: center;
     list-style-type: none;
 
-    padding: 0px 0px 2em 5%;
+    padding: 0px 0px 2em 2.5%;
     margin-bottom: 0px;
 	}
 
@@ -131,7 +141,7 @@ nav{
     @extend %position_relative;
     border-left: solid 1px;
     border-right: solid 1px;
-    width: 16.6%;
+    width: calc(100%/7);
     padding: 5px .3em;
     text-align: center;
     letter-spacing: 4px;
@@ -139,7 +149,7 @@ nav{
     &:nth-child(1) {
       border-left: solid 0px;
     }
-    &:nth-child(6) {
+    &:nth-child(7) {
       border-right: solid 0px;
     }
 
@@ -163,6 +173,19 @@ nav{
       }
     }
   }
+
+  .contact{
+  	display: flex;
+    justify-content: center;
+  	> a{
+			margin-right: .8em;
+	    font-size: 1.5em;
+
+	    &:hover{
+	    	opacity: .4;
+	    }
+  	}
+  }
 }
 
 
@@ -177,6 +200,12 @@ nav{
 		p{
 			padding-left: 8%;
 		}
+		a{
+			padding-left: 8%;
+		}
+	}
+
+	.header-content{
 	}
 
 	.section-board{
@@ -218,8 +247,6 @@ nav{
     font-size: 1em;
 
 		> ul{
-	    width: 80%;
-			padding-left: 15%;
 	    padding-right: 3%;
 			justify-content: flex-end;
 		}
@@ -232,5 +259,11 @@ nav{
 
 	.contact{
 		padding-left: 10%;
+	}
+}
+
+@media (min-width: map-get($break-point, screen-s)){
+	header{
+		height: 25%;
 	}
 }

@@ -13,10 +13,10 @@ header{
 }
 
 .header-content{
-	opacity: 0.97;
+	background-color: rgba(2, 184, 117, .95);
 
 	&:hover{
-		opacity: 0.9;		
+		background-color: rgba(2, 184, 117, .85)
 	}
 }
 
@@ -27,6 +27,14 @@ header{
 .contact{
 	padding-top: 1em;
 	text-align: center;
+}
+
+.section-title{
+	h1{
+		&:after{
+			background-color: $main-color;
+		}
+	}
 }
 
 .section-board{

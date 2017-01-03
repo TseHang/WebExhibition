@@ -5,7 +5,7 @@
   {{> head}}
 
   <title> WebExhibition - {{title}}</title>
-  <link rel="stylesheet" href = "./dist/css/issue.css">
+  <link rel="stylesheet" href = "./dist/css/visualization.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 	</header>
 
 	<nav>
-		<h3>掌蚊人</h3>
+		<h3>台南市政府1999派工案件</h3>
 	</nav>
 
 	<section>
@@ -28,12 +28,7 @@
 
 		<div class="row">
 			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
-				<p>登革熱災情在2015年重創台灣。</p>
-
-				<p>
-				但是<span class="p-font-400 color-blue">「防疫」</span>，需要家家戶戶一起來守護環境才可根除。
-					<br>
-				<span class="p-font-400">因此能否出現一個衛教網站教育民眾、呈現專業的即時資訊並且深入人心？</span>
+				<p>台南市民服務專線1999擁有許多人民陳情、派工案件的事件資料，這次我們團隊很榮幸受邀來幫他們製作一系列的視覺化圖表，<span class="color-blue">清楚把這些數據背後呈現的意義表達出來。</span>
 				</p>
 			</div>
 		</div>
@@ -45,14 +40,18 @@
 		<div class="row">
 			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
 				<ul>
-					<li>確認核心目標：「一個<span class="color-blue">親切</span>、帶有<span class="color-blue">專業</span>且<span class="color-blue">即時</span>的衛教資訊網站」</li>
+					<li>選對議題是一個很重要的關鍵</li>
 
-					<li>希望透過有趣的方式，讓民眾不會覺的這是一些無聊的資訊，而是生動且富含意義。</li>
+					<li>定義此網站的核心<span class="color-blue">「簡潔、易用、統計」</span></li>
 
-					<li>主視覺： 綠色代表「環境」，黃色代表「溫暖」。
+					<li><span class="color-blue">三個想傳達的訊息</span>
+						<br>
+					我家旁邊都有什麼案件發生呢？
+						<br>
+					台南市這一星期到底都發生了什麼？
+						<br>
+					若是從時間軸綜觀 看，派工案件發生的次數是如何變化？
 					</li>
-
-					<li class="p-font-400 color-blue">以「視差滾動」的技術方式述說一篇降蚊故事，並塑造全新人物「掌蚊人」</li>
 				</ul>
 			</div>
 		</div>
@@ -63,14 +62,13 @@
 
 		<div class="row">
 			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-				<div id="board-theMosquitoMan" class="board-img" onclick="window.open('//www.denguefever.tw');"></div>
+				<div id="board-slotMachine" class="board-img" onclick="window.open('http://1999.instants.io/#overview');"></div>
 				<div class="board-content">
-					<h2>掌蚊人</h2>
-					<p class="color-green">一場對抗登革熱的修煉</p>
+					<h2>台南市政府1999</h2>
+					<p class="color-yellow-earthy">視覺化圖表分析</p>
 					<br>
 					<div class="link">
-						<a href="//www.denguefever.tw" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
-						<a href="//www.denguefever.tw" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+						<a href="http://1999.instants.io/#overview" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
 					</div>
 				</div>
 				<div class="circle"></div>
@@ -86,6 +84,6 @@
 
 </body>
 <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
-<script type="text/javascript" src="dist/js/block-issue.js"></script>
+<script type="text/javascript" src="dist/js/block-visualization.js"></script>
 
 </html>

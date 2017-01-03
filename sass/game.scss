@@ -4,19 +4,19 @@
 @import 'partials/footer';
 @import 'partials/pojoro';
 
-$main-color: map-get($color-block, blue);
+$main-color: map-get($color-block, purple);
 
 header{
 	@extend %position_relative;
-	background: transparent url(../img/3dvr.jpg) ;
+	background: transparent url(../img/game.png) ;
   background-size: cover;
 }
 
 .header-content{
-	background-color: rgba(63, 169, 245, .7);
+	background-color: rgba(141, 130, 196, 0.9);
 
 	&:hover{
-		background-color: rgba(63, 169, 245, .3);
+		background-color: rgba(141, 130, 196, 0.2);
 	}
 }
 
@@ -47,7 +47,7 @@ header{
 	}
 
 	.board-img{
-		background: url(../img/3dvr_demo.png) no-repeat ;
+		background: url(../img/game_demo.png) no-repeat ;
 		background-size: cover;
 	}
 }

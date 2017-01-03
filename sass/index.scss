@@ -73,10 +73,18 @@
 	text-align: center;
 
 	.block{
-		@include transition(opacity .3s ease-in);
+		@extend %position_relative;
 		cursor: pointer;
 		min-height: 30%;
+		padding: 0px;
 		color: map-get($color-basic, white);
+	}
+
+	.in-block{
+		@extend %position_absolute;
+		@include transition(background-color .3s ease-in);
+		width: 100%;
+		height: 100%;
 	}
 
 	h2{
@@ -102,14 +110,84 @@
 	}
 }
 
-@each $name, $color in $color-block {
-  #block-#{$name} {
-    background-color: $color;
+.block{
+	.row-1 &{
+		&:nth-child(1){
+			background-image: url(../img/3dvr.jpg);
+			background-size: cover;
+		}
 
-    &:hover{
-    	opacity: 0.5;
-    }
-  }
+		&:nth-child(2){
+			background:transparent url(../img/logo.svg) center;
+			background-size: cover;
+		}		
+	}
+
+	.row-2 &{
+		&:nth-child(1){
+			background-image: url(../img/simple-app.png);
+			background-size: cover;
+		}
+
+		&:nth-child(2){
+			background-image: url(../img/visualization.png);
+			background-size: cover;
+		}		
+	}
+
+	.row-3 &{
+		&:nth-child(1){
+			background-image: url(../img/story.png);
+			background-size: cover;
+		}
+
+		&:nth-child(2){
+			background-image: url(../img/game.png);
+			background-size: cover;
+		}		
+	}
+}
+
+#block-blue{
+	background-color: rgba(63, 169, 245, .7);
+	&:hover{
+		background-color: rgba(63, 169, 245, .2);
+	}
+}
+
+#block-green{
+	background-color: rgba(2, 184, 117, .95);
+	&:hover{
+		background-color: rgba(2, 184, 117, .4);
+	}
+}
+
+#block-red-pink{
+	background-color: rgba(236, 141, 129, .95);
+	&:hover{
+		background-color: rgba(236, 141, 129, .5);
+	}
+}
+
+#block-yellow-earthy{
+	background-color: rgba(231, 183, 136, .95);
+	&:hover{
+		background-color: rgba(231, 183, 136, .4);
+	}
+}
+
+#block-green-pink{
+	background-color: rgba(135, 197, 164, .9);
+	&:hover{
+		background-color: rgba(135, 197, 164, .2);
+	}
+}
+
+#block-purple{
+	background-color: rgba(141, 130, 196, .9);
+	&:hover{
+		background-color: rgba(141, 130, 196, .2);
+	}
 }
 
 /*

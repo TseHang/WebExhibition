@@ -5,11 +5,23 @@
   color: map-get($color-basic, white);
   font-size: $font-size--base * .7;
   text-align: center;
-
 }
 
 .footer-block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+	> a{
+    font-size: 2em;
+    margin-right: .8em;
+
+    &:hover{
+    	opacity: .3;
+    }
+	}
+
 	> p{
-		margin: .8em 0px .2em 0px;
+		margin: 0px;
 	}
 }
