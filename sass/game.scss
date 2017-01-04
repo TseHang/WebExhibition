@@ -41,6 +41,10 @@ header{
 	&:before{
 		border-color: $main-color transparent transparent $main-color;
 	}
+
+	&:after{
+		border-color: transparent $main-color $main-color transparent ;
+	}
 	
 	.circle{
 		border-color: $main-color;

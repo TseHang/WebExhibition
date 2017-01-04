@@ -962,6 +962,8 @@ header {
 
 .section-board:before {
   border-color: #3FA9F5 transparent transparent #3FA9F5; }
+.section-board:after {
+  border-color: transparent #3FA9F5 #3FA9F5 transparent; }
 .section-board .circle {
   border-color: #3FA9F5; }
 .section-board .board-img {

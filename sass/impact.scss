@@ -3,6 +3,206 @@
 @import 'partials/footer';
 @import 'partials/pojoro';
 
-h5{
-	color: white;
+body{
+	background-color: map-get($color-basic, skin);
+	letter-spacing: map-get($letter-spacing, s);
+	height: auto !important;
+}
+
+
+.wrap{
+	width: 100%;
+	height: 80%;
+	text-align: center;
+
+	h3{
+		letter-spacing: map-get($letter-spacing, l);
+    padding: 10em 1em 0px 1em;
+	}
+
+	p{
+		padding: 0px 2em;
+	}
+}
+
+.pojoro-box{
+	@include border-radius(100%);
+	@extend %position_relative;
+	margin: auto;
+  width: 10em;
+  height: 10em;
+  top: 50%;
+  transform: translateY(-100%);
+  background-color: map-get($color-basic, white);
+
+  display: flex;
+	align-items: center;
+  justify-content: center;
+}
+
+.section-part{
+	@extend %position_relative;
+	opacity:0;
+
+	.left-bar{
+		@extend %position_absolute;
+		width: .7em;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		background-color: map-get($color-block, blue)
+	}
+
+	.top-date{
+    @extend %position_relative;
+    width: 6em;
+
+		p{
+			padding-left: .8em;
+		}
+
+		&.date-long{
+			width: 11em;			
+		}
+
+		&:after{
+			@extend %position_absolute;
+	    content: '';
+	    width: 110%;
+	    height: .5em;
+	    bottom: 0px;
+	    transform: translateY(100%);
+	    border-bottom-right-radius: 1em;
+	    border-top-right-radius: 1em;
+
+	    background-color: map-get($color-block, blue);
+		}
+	}
+}
+
+
+.part-img-box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:center;
+
+	.part-img{
+		@extend %position_relative;
+		@include border-radius(25px);
+		width: 80%;
+		height: 30%;
+    margin: 2em 5%;
+	}
+
+	p{
+		@extend %position_absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%) translateY(160%);
+	}
+}
+
+.part-event{
+  margin: 1em 1em 1em 2em;
+  color: map-get($color-basic, gray-dark);
+
+  img{
+  	width: 100%;
+  }
+}
+
+#review2015{
+	background: white url(../img/review2015.png) center;
+	background-size: cover;
+}
+
+#happiness{
+	background: white url(../img/happiness.png) center;
+	background-size: cover;
+}
+
+#realtime-draw{
+	background: white url(../img/simple-app_demo.png) center;
+	background-size: cover;	
+}
+
+#draw-demo-video{
+	cursor: pointer;
+	background: white url(../img/draw_demo.png) center;
+	background-size: cover;	
+
+	&:hover{
+		box-shadow: inset 0px 0px 7px 5px rgba(42, 43, 42, 0.7);
+	}
+}
+
+#theMosquitoMan{
+	background: white url(../img/theMosquitoMan.png) center;
+	background-size: cover;		
+}
+
+#theMosquitoMan_game{
+	background: white url(../img/game.png) center;
+	background-size: cover;		
+}
+
+#slotMachine{
+	background: white url(../img/slotMachine.png) center;
+	background-size: cover;			
+}
+
+#proj-1999{
+	background: white url(../img/visualization_demo.png) center;
+	background-size: cover;				
+}
+
+.section-end{
+	@extend %position_relative;
+	height: 5em;
+
+	.left-bar{
+		@extend %position_absolute;
+		width: .7em;
+		height: 80%;
+		top: 0px;
+		left: 0px;
+		background-color: map-get($color-block, blue)
+	}
+
+	&:after{
+		@extend %position_absolute;
+		@include traingle-right(map-get($color-block, blue), 1em);
+		content: '';
+		left: -.6em;
+		bottom: 1em;
+		transform: rotateZ(45deg);
+
+	}
+}
+
+
+/*
+ * break-point
+ */
+@media (min-width: map-get($break-point, table-l) ){	
+	.pojoro-box{
+	  width: 15em;
+	  height: 15em;
+	  transform: translateY(-50%);
+	}
+
+	.part-img-box{
+		.part-img{
+			width: 40%;
+			margin-top: 1em;
+		}
+	}
+
+	.part-event{
+		margin-left: 3em;
+
+		img{
+			width: 70%;
+		}
+	}
 }
