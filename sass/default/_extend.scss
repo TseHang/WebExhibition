@@ -33,18 +33,53 @@
 
   .circle{
 		@include circle-hollow($color-board-major, 3em, 5px);
-		@include transition(all .2s ease-in);
-		position: absolute;
+		@include transition(all .3s ease-in);
+		@extend %position_absolute;
 	  right: -1em;
 	  bottom: -1em;
+
+	  @media(min-width: map-get($break-point, table-l)){
+	  	right: -2em;
+	    bottom: -2em;
+	    width: 4em;
+	    height: 4em;
+	  }
+	}
+
+	&:before, &:after{
+		@extend %position_absolute;
+		@include transition(all .3s ease-in);
+  	content: '';
+
+  	@media(min-width: map-get($break-point, table-l)){
+	  	border-width: 1.8em;
+	  }
 	}
 
   &:before{
-  	@extend %position_absolute;
   	@include traingle-left($color-board-major, 1.3em);
-  	@include transition(all .2s ease-in);
-  	content: '';
   	top: 0px;
   	left: 0px;
+  }
+
+  &:after{
+  	@include traingle-right($color-board-major, 1.3em);
+  	bottom: 0px;
+  	right: 0px;
+    transform: translateX(100%) translateY(100%);
+  }
+
+  &:hover{
+  	box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, .4);
+  	.circle{
+			width: 0em;
+			height: 0em;
+			opacity: 0;
+  	}
+
+  	&:after{
+  		transform: translateX(0%) translateY(0%);
+  	}
+
   }
 }

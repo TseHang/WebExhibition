@@ -64,6 +64,15 @@ var route = [
       partials: './partial.js',
       layout:  "./layout/game.hbs",
       filename: "./game.html"
+    },
+    {
+      data: {
+        path: './',
+        title: 'Impact',
+      },
+      partials: './partial.js',
+      layout:  "./layout/impact.hbs",
+      filename: "./impact.html"
     }
   ];
 module.exports = route;

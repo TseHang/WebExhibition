@@ -10,7 +10,7 @@
 .section-title h1, .section-board, .row, .section-board .board-img, .section-board .link, .footer .list, .menu, .menu .list, header {
   position: relative; }
 
-.section-board:before, .header-content {
+.section-board .circle, .section-board:before, .header-content {
   position: absolute; }
 
 .section-title {
@@ -36,25 +36,42 @@
     border: solid 5px #3FA9F5;
     border-radius: 100%;
     background: transparent;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    position: absolute;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
     right: -1em;
     bottom: -1em; }
+    @media (min-width: 768px) {
+      .section-board .circle {
+        right: -2em;
+        bottom: -2em;
+        width: 4em;
+        height: 4em; } }
   .section-board:before {
     background: transparent;
     border-color: #3FA9F5 transparent transparent #3FA9F5;
     border-style: solid;
     border-width: 1.3em;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
     content: '';
     top: 0px;
     left: 0px; }
+    @media (min-width: 768px) {
+      .section-board:before {
+        border-width: 1.8em; } }
+  .section-board:hover .circle {
+    right: -1em;
+    bottom: -1em;
+    width: 12em;
+    height: 12em;
+    opacity: 0; }
+  .section-board:hover:before {
+    border-width: 2.5em;
+    opacity: .5; }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document

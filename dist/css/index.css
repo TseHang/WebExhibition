@@ -10,7 +10,7 @@
 .board-title h1, .board-card, .row, .menu, .menu .list, .mobile-logo, .section-blocks .block, .section-blocks h2 {
   position: relative; }
 
-.board-card:before, .mobile-logo:after, .section-blocks .in-block, .section-blocks h2:after {
+.board-card .circle, .board-card:before, .board-card:after, .mobile-logo:after, .section-blocks .in-block, .section-blocks h2:after {
   position: absolute; }
 
 .board-title {
@@ -36,25 +36,50 @@
     border: solid 5px #3FA9F5;
     border-radius: 100%;
     background: transparent;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    position: absolute;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
     right: -1em;
     bottom: -1em; }
+    @media (min-width: 768px) {
+      .board-card .circle {
+        right: -2em;
+        bottom: -2em;
+        width: 4em;
+        height: 4em; } }
+  .board-card:before, .board-card:after {
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    content: ''; }
+    @media (min-width: 768px) {
+      .board-card:before, .board-card:after {
+        border-width: 1.8em; } }
   .board-card:before {
     background: transparent;
     border-color: #3FA9F5 transparent transparent #3FA9F5;
     border-style: solid;
     border-width: 1.3em;
-    -moz-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    -webkit-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    content: '';
     top: 0px;
     left: 0px; }
+  .board-card:after {
+    background: transparent;
+    border-color: transparent #3FA9F5 #3FA9F5 transparent;
+    border-style: solid;
+    border-width: 1.3em;
+    bottom: 0px;
+    right: 0px;
+    transform: translateX(100%) translateY(100%); }
+  .board-card:hover {
+    box-shadow: 3px 3px 7px 2px rgba(0, 0, 0, 0.4); }
+    .board-card:hover .circle {
+      width: 0em;
+      height: 0em;
+      opacity: 0; }
+    .board-card:hover:after {
+      transform: translateX(0%) translateY(0%); }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
@@ -771,6 +796,14 @@ h1 {
 /*
  *	section-board
  */
+.board-card a {
+  margin-bottom: .3em; }
+  .board-card a:hover {
+    color: #EC8D81; }
+.board-card i {
+  font-size: 1.8em;
+  margin-right: .2em; }
+
 /*
  *	section-block
  */
@@ -857,13 +890,6 @@ h1 {
 @media (min-width: 768px) {
   .board-card {
     padding: 2rem 3rem .5rem; }
-    .board-card:before {
-      border-width: 1.8em; }
-    .board-card .circle {
-      right: -2em;
-      bottom: -2em;
-      width: 5em;
-      height: 5em; }
 
   .wrap {
     display: block;

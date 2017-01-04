@@ -4,6 +4,7 @@ module.exports= function (hbs) {
   // register partials
   hbs.registerPartial('head', getPartials('head'));
   hbs.registerPartial('header', getPartials('header'));
+  hbs.registerPartial('footer', getPartials('footer'));
   hbs.registerPartial('block-footer', getPartials('block-footer'));
 };
 

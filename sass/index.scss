@@ -62,9 +62,21 @@
 }
 
 .board-card{
-	@extend %board-content
-}
+	@extend %board-content;
 
+	a{
+  	margin-bottom: .3em;
+
+  	&:hover{
+  		color: map-get($color-block, red-pink);
+  	}
+	}
+
+	i{
+		font-size: 1.8em;
+		margin-right: .2em;
+	}
+}
 
 /*
  *	section-block
@@ -196,19 +208,8 @@
 @media (min-width: map-get($break-point, table-l) ){
 	.board-card{
 		padding: 2rem 3rem .5rem;
-
-		&:before{
-	    border-width: 1.8em;
-		}
-
-		.circle{
-	    right: -2em;
-	    bottom: -2em;
-	    width: 5em;
-	    height: 5em;
-		}
 	}
-
+	
 	.wrap{
 		display: block;
 		text-align: center;

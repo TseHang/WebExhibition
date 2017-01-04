@@ -6,6 +6,13 @@
   border-width: $width;
 }
 
+@mixin traingle-right($color, $width){
+  background: transparent;
+	border-color: transparent $color $color transparent;
+  border-style: solid;
+  border-width: $width;
+}
+
 
 @mixin circle-hollow($color ,$r ,$border-width ){
   width: $r;
