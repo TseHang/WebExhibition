@@ -18,7 +18,7 @@ var vmHeader = new Vue({
 	}
 });
 
-if (windowWidth >= 1280) {
+if (windowWidth >= 768) {
 	$(window).scroll(function () {
 		var scrollVal = $(this).scrollTop();
 
@@ -30,7 +30,7 @@ if (windowWidth >= 1280) {
 				$('.gogoGuide').removeClass('hover');
 			}, 2000);
 		} else if (scrollVal > errorDistance) {
-			$('.experienceTalk').html('「掌蚊人」<br>主人的第一個大型專案，從發想、尋找適合的設計師、溝通討論...到最後內容編輯製作完成共花了 3個月。');
+			$('.experienceTalk').html('「掌蚊人」<br>我們的第一個大型專案，從發想、尋找適合的設計師、溝通討論...到最後內容編輯製作完成共花了 3個月。');
 		}
 	});
 

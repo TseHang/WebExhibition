@@ -25,10 +25,6 @@
 	height: 100%;
 }
 
-.gogoGuide{
-	display: none;
-}
-
 .mobile-logo{
 	@extend %position_relative;
   text-align: center;
@@ -211,6 +207,12 @@
  * break-point
  */
 @media (min-width: map-get($break-point, table-l) ){
+	.gogoGuide{
+		.experience-close{
+			color: map-get($color-block, purple);
+		}
+	}
+
 	.board-card{
 		padding: 2rem 3rem .5rem;
 	}

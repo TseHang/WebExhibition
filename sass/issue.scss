@@ -60,7 +60,13 @@ header{
 /*
  * pojoro
  */ 
-@media (min-width: map-get($break-point, screen-l)){
+@media (min-width: map-get($break-point, table-l)){
+	.gogoGuide{
+		.experience-close{
+			color: $main-color;
+		}
+	}
+	
 	#experience{
 		box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
 					0 0 0.1em 0.55em rgba(29, 128, 91, 0.95), 

@@ -30,7 +30,7 @@ header{
 
 .header-content{
 	@extend %position_absolute;
-	@include transition(opacity, .2s, linear);
+	@include transition(opacity .2s linear);
   left: 0px;
   top: 0px;
   width: 100%;
@@ -73,7 +73,7 @@ nav{
 
 	.board-img{
 		@extend %position_relative;
-		@include transition(all, .2s , ease-in);
+		@include transition(all .2s ease-in);
 		@include border-radius(25px);
 		width: 90%;
     height: 30%;
@@ -261,16 +261,10 @@ nav{
 		padding-left: 10%;
 	}
 }
-
-@media (min-width: map-get($break-point, screen-s)){
-	header{
-		height: 25%;
-	}
-}
-
-@media (min-width: map-get($break-point, screen-l)){
+@media (min-width: map-get($break-point, table-l)){
 	.gogoGuide{
-		display: block !important;
+		display: block ;
+		
 		&.hover{
 			> #experience{
 				&:before, &:after{
@@ -292,5 +286,11 @@ nav{
 		&:before, &:after{
 			@include animation-duration(1.2s);
 		}
+	}
+}
+
+@media (min-width: map-get($break-point, screen-s)){
+	header{
+		height: 25%;
 	}
 }

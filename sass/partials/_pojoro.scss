@@ -8,7 +8,7 @@ $pojoro:(
 
 .pojoro {
 	@include border-radius(100%);
-	@include transition(all .8s ease-in-out);
+	@include transition(all .7s ease-in-out);
 	background-color: map-get($color-basic, white);
 	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 40%,rgba(51,51,51,1) 100%);
 	
@@ -44,7 +44,7 @@ $pojoro:(
 	&:before, &:after{
 		/* wings */
 		@include border-radius(100%);
-		@include transition(all , .2s);
+		@include transition(all .2s);
 		background-color: map-get($color-basic, white);
 		content: "";
 		

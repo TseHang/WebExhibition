@@ -17,8 +17,9 @@ var vmHeader = new Vue({
 		header: data.header
 	}
 });
+var count = 0;
 
-if (windowWidth >= 1280) {
+if (windowWidth >= 768) {
 	$(window).scroll(function () {
 		var scrollVal = $(this).scrollTop();
 
@@ -30,7 +31,7 @@ if (windowWidth >= 1280) {
 				$('.gogoGuide').removeClass('hover');
 			}, 2000);
 		} else if (scrollVal > errorDistance) {
-			$('.experienceTalk').html('「3D & VR」<br>是近期一個很夯的話題，主人針對專題展場做了一點小應用，希望大家喜歡！');
+			$('.experienceTalk').html('「3D & VR」<br>是近期一個很夯的話題，我們針對專題展場做了一點小應用，希望大家喜歡！');
 		}
 	});
 

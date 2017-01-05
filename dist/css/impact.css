@@ -623,10 +623,10 @@ h1 {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  -moz-transition: all 0.8s ease-in-out;
-  -o-transition: all 0.8s ease-in-out;
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   background-color: #FFF;
   background: radial-gradient(ellipse at center, #ffffff 40%, #333333 100%);
   /* box-shadow: secondary color, body, eyelash */
@@ -656,10 +656,10 @@ h1 {
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
-    -moz-transition: all, 0.2s;
-    -o-transition: all, 0.2s;
-    -webkit-transition: all, 0.2s;
-    transition: all, 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     background-color: #FFF;
     content: "";
     /* display:none, hide wings */

@@ -6,6 +6,7 @@
 
   <title> WebExhibition - {{title}}</title>
   <link rel="stylesheet" href = "./dist/css/issue.css">
+  <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
 </head>
 <body>
 
@@ -79,10 +80,7 @@
 
 	</section>
 
-	<div class="gogoGuide">
-		<div id="experience" class="pojoro"> ● </div>
-		<p class="experienceTalk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p>
-	</div>
+	{{> gogoGuide}}
 
 	<footer class="footer">
 		{{> block-footer}}
@@ -90,8 +88,7 @@
 
 
 </body>
-<script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+{{> js-include}}
 <script type="text/javascript" src="dist/js/block-issue.js"></script>
 <script type="text/javascript">
 	$('.gogoGuide').addClass('hover');	

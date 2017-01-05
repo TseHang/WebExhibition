@@ -18,7 +18,7 @@ var vmHeader = new Vue({
 	}
 });
 
-if (windowWidth >= 1280) {
+if (windowWidth >= 768) {
 	$(window).scroll(function () {
 		var scrollVal = $(this).scrollTop();
 

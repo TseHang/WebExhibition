@@ -1,6 +1,10 @@
-@media (min-width: map-get($break-point, screen-l)){
+.gogoGuide{
+	display: none;
+}
+
+@media (min-width: map-get($break-point, table-l)){
 	.gogoGuide{
-		@include transition(right , .6s, ease-in);
+		@include transition(all .6s ease-in);
 		@include animation(experienceShow 0.7s linear);
 		display: none;
     position: fixed;
@@ -29,6 +33,20 @@
 			}
     }
 
+    .experience-close{
+	    position: absolute;
+	    display: none;
+	    left: 50%;
+	    top: 50%;
+	    font-size: .3em;
+	    transform: translateX(-50%) translateY(-50%);
+	    cursor: pointer;
+	    z-index: -1;
+	    &:hover{
+	    	opacity: .4;
+	    }
+    }
+
     &.hover{
     	right: 2em;
     	> #experience{
@@ -50,15 +68,44 @@
     		opacity: 1;
     	}
     }
+
+    &.drag{
+    	@include transition(none);
+
+    	> #experience{
+    		&:before, &:after{
+					@include animation-duration(.3s !important);
+				}
+    	}
+    }
+
+    &.close-show{
+    	.experience-close{
+    		@include animation(close-show .3s linear forwards);
+    		display: block;
+    		z-index: 2;
+    	}
+    }
 	}
 
 	#experience{
-		@include transition(transform , .3s, ease-in);
+		@include transition(transform .3s ease-in);
 		cursor: move;
 		transform: scale(.6);
 		&:before, &:after{
 			@include animation-duration(.7s);
 			display: block;
 		}
+	}
+}
+
+@include keyframes(close-show){
+	from{
+		top: 50%;
+		font-size: .3em;
+	}
+	to{
+		top: 30%;
+		font-size: 1.8em;
 	}
 }

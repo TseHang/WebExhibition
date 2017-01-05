@@ -19,7 +19,7 @@ var vmHeader = new Vue({
 	}
 });
 
-if (windowWidth >= 1280) {
+if (windowWidth >= 768) {
 	$(window).scroll(function () {
 		var scrollVal = $(this).scrollTop();
 
@@ -30,7 +30,7 @@ if (windowWidth >= 1280) {
 				$('.gogoGuide').removeClass('hover');
 			}, 2000);
 		} else if (scrollVal > errorDistance) {
-			$('.experienceTalk').html('「1999視覺化」<br>這是主人第一次組織團隊做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的統計意義。');
+			$('.experienceTalk').html('「1999視覺化」<br>這是我們團隊第一次合做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的圖表意義。');
 		}
 	});
 

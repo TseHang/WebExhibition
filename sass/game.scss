@@ -56,3 +56,11 @@ header{
 		background-size: cover;
 	}
 }
+
+@media (min-width: map-get($break-point, table-l)){
+	.gogoGuide{
+		.experience-close{
+			color: $main-color;
+		}
+	}
+}

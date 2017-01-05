@@ -18,7 +18,7 @@ var vmHeader = new Vue({
 	}
 });
 
-if (windowWidth >= 1280) {
+if (windowWidth >= 768) {
 	$(window).scroll(function () {
 		var scrollVal = $(this).scrollTop();
 
@@ -36,7 +36,7 @@ if (windowWidth >= 1280) {
 
 	$('#section-review2015').mouseover(function () {
 		$('.gogoGuide').addClass('hover');
-		$('.experienceTalk').html('主人的第一個作品，雖然不是很完美，但卻是2015年很重要的議題喔！ ><');
+		$('.experienceTalk').html('我們的第一個作品，雖然不是很完美，但卻是2015年很重要的議題喔！ ><');
 	});
 
 	$('#section-happiness').mouseover(function () {

@@ -6,6 +6,8 @@ module.exports= function (hbs) {
   hbs.registerPartial('header', getPartials('header'));
   hbs.registerPartial('footer', getPartials('footer'));
   hbs.registerPartial('block-footer', getPartials('block-footer'));
+  hbs.registerPartial('gogoGuide', getPartials('gogoGuide'));
+  hbs.registerPartial('js-include', getPartials('js-include'));
 };
 
 function getPartials(filename) {

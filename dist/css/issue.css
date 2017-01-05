@@ -623,10 +623,10 @@ h1 {
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  -moz-transition: all 0.8s ease-in-out;
-  -o-transition: all 0.8s ease-in-out;
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
   background-color: #FFF;
   background: radial-gradient(ellipse at center, #ffffff 40%, #333333 100%);
   /* box-shadow: secondary color, body, eyelash */
@@ -656,10 +656,10 @@ h1 {
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
-    -moz-transition: all, 0.2s;
-    -o-transition: all, 0.2s;
-    -webkit-transition: all, 0.2s;
-    transition: all, 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
     background-color: #FFF;
     content: "";
     /* display:none, hide wings */
@@ -765,12 +765,15 @@ h1 {
 @keyframes wings2 {
   50% {
     transform: rotate(-65deg); } }
-@media (min-width: 1280px) {
+.gogoGuide {
+  display: none; }
+
+@media (min-width: 768px) {
   .gogoGuide {
-    -moz-transition: right, 0.6s, ease-in;
-    -o-transition: right, 0.6s, ease-in;
-    -webkit-transition: right, 0.6s, ease-in;
-    transition: right, 0.6s, ease-in;
+    -moz-transition: all 0.6s ease-in;
+    -o-transition: all 0.6s ease-in;
+    -webkit-transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
     -moz-animation: experienceShow 0.7s linear;
     -webkit-animation: experienceShow 0.7s linear;
     animation: experienceShow 0.7s linear;
@@ -800,6 +803,17 @@ h1 {
         top: -.9em;
         left: 50%;
         transform: translateX(-50%) rotateZ(45deg); }
+    .gogoGuide .experience-close {
+      position: absolute;
+      display: none;
+      left: 50%;
+      top: 50%;
+      font-size: .3em;
+      transform: translateX(-50%) translateY(-50%);
+      cursor: pointer;
+      z-index: -1; }
+      .gogoGuide .experience-close:hover {
+        opacity: .4; }
     .gogoGuide.hover {
       right: 2em; }
       .gogoGuide.hover > #experience {
@@ -812,12 +826,27 @@ h1 {
         transform: scale(1); }
       .gogoGuide:hover .experienceTalk {
         opacity: 1; }
+    .gogoGuide.drag {
+      -moz-transition: none;
+      -o-transition: none;
+      -webkit-transition: none;
+      transition: none; }
+      .gogoGuide.drag > #experience:before, .gogoGuide.drag > #experience:after {
+        -moz-animation-duration: 0.3s !important;
+        -webkit-animation-duration: 0.3s !important;
+        animation-duration: 0.3s !important; }
+    .gogoGuide.close-show .experience-close {
+      -moz-animation: close-show 0.3s linear forwards;
+      -webkit-animation: close-show 0.3s linear forwards;
+      animation: close-show 0.3s linear forwards;
+      display: block;
+      z-index: 2; }
 
   #experience {
-    -moz-transition: -moz-transform, 0.3s, ease-in;
-    -o-transition: -o-transform, 0.3s, ease-in;
-    -webkit-transition: -webkit-transform, 0.3s, ease-in;
-    transition: transform, 0.3s, ease-in;
+    -moz-transition: -moz-transform 0.3s ease-in;
+    -o-transition: -o-transform 0.3s ease-in;
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
     cursor: move;
     transform: scale(0.6); }
     #experience:before, #experience:after {
@@ -825,6 +854,27 @@ h1 {
       -webkit-animation-duration: 0.7s;
       animation-duration: 0.7s;
       display: block; } }
+@-moz-keyframes close-show {
+  from {
+    top: 50%;
+    font-size: .3em; }
+  to {
+    top: 30%;
+    font-size: 1.8em; } }
+@-webkit-keyframes close-show {
+  from {
+    top: 50%;
+    font-size: .3em; }
+  to {
+    top: 30%;
+    font-size: 1.8em; } }
+@keyframes close-show {
+  from {
+    top: 50%;
+    font-size: .3em; }
+  to {
+    top: 30%;
+    font-size: 1.8em; } }
 body {
   letter-spacing: 2px; }
 
@@ -846,10 +896,10 @@ header {
       opacity: .4; }
 
 .header-content {
-  -moz-transition: opacity, 0.2s, linear;
-  -o-transition: opacity, 0.2s, linear;
-  -webkit-transition: opacity, 0.2s, linear;
-  transition: opacity, 0.2s, linear;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
   left: 0px;
   top: 0px;
   width: 100%;
@@ -877,10 +927,10 @@ nav {
   justify-content: center;
   margin-bottom: 3em; }
   .section-board .board-img {
-    -moz-transition: all, 0.2s, ease-in;
-    -o-transition: all, 0.2s, ease-in;
-    -webkit-transition: all, 0.2s, ease-in;
-    transition: all, 0.2s, ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 25px;
@@ -1007,12 +1057,9 @@ nav {
 
   .contact {
     padding-left: 10%; } }
-@media (min-width: 1024px) {
-  header {
-    height: 25%; } }
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .gogoGuide {
-    display: block !important; }
+    display: block; }
     .gogoGuide.hover > #experience:before, .gogoGuide.hover > #experience:after {
       -moz-animation-duration: 0.7s;
       -webkit-animation-duration: 0.7s;
@@ -1026,6 +1073,9 @@ nav {
     -moz-animation-duration: 1.2s;
     -webkit-animation-duration: 1.2s;
     animation-duration: 1.2s; } }
+@media (min-width: 1024px) {
+  header {
+    height: 25%; } }
 .menu {
   z-index: 1000;
   width: 80%;
@@ -1126,7 +1176,10 @@ header {
 /*
  * pojoro
  */
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+  .gogoGuide .experience-close {
+    color: #02B875; }
+
   #experience {
     box-shadow: 0 0 0 0.2em #1f9268, 0 0 0.1em 0.55em rgba(29, 128, 91, 0.95), inset 0 0.2em 0 0 #016b44;
     -moz-animation: eye-issue 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
