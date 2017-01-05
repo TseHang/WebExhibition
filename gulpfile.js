@@ -25,7 +25,7 @@ gulp.task('sass',function(){
     	time: true
     	// comments: false
 		}))
-		// .pipe(minifyCSS()) // 若加入這行，代表 sourcemap 會沒用（因為註解都消失了）
+		.pipe(minifyCSS()) // 若加入這行，代表 sourcemap 會沒用（因為註解都消失了）
 		.pipe(gulp.dest('dist/css'))
 })
 
@@ -38,7 +38,7 @@ gulp.task('js', function(){
     /* -- TODO --
      MINIFY js ,if readt to online!!
 		*/
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(rename(function(path){
 			logPath(path , "yellow");
     }))

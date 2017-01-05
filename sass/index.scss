@@ -88,7 +88,7 @@
 	.block{
 		@extend %position_relative;
 		cursor: pointer;
-		min-height: 30%;
+		min-height: 35%;
 		padding: 0px;
 		color: map-get($color-basic, white);
 	}
@@ -258,10 +258,4 @@
 			display: block;
 		}
 	}
-	
-  .section-blocks{
-  	.block{
-  		min-height: 35%;
-  	}
-  }
 }

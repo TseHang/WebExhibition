@@ -31,6 +31,10 @@ body{
 	}
 }
 
+.section-content{
+	margin-top: 8em;
+}
+
 .pojoro-box{
 	@include border-radius(100%);
 	@extend %position_relative;
@@ -219,10 +223,6 @@ body{
 		h3{
 			padding-top: 14em;
 		}
-	}
-
-	.section-content{
-		margin-top: 3em;
 	}
 }
 
