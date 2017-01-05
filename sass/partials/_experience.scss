@@ -38,8 +38,7 @@
 	    display: none;
 	    left: 50%;
 	    top: 50%;
-	    font-size: .3em;
-	    transform: translateX(-50%) translateY(-50%);
+	    font-size: 1.8em;
 	    cursor: pointer;
 	    z-index: -1;
 	    &:hover{
@@ -102,10 +101,10 @@
 @include keyframes(close-show){
 	from{
 		top: 50%;
-		font-size: .3em;
+		transform: translateX(-50%) translateY(-50%) scale(.1);
 	}
 	to{
 		top: 30%;
-		font-size: 1.8em;
+		transform: translateX(-50%) translateY(-50%) scale(1);
 	}
 }
