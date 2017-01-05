@@ -1,0 +1,64 @@
+@media (min-width: map-get($break-point, screen-l)){
+	.gogoGuide{
+		@include transition(right , .6s, ease-in);
+		@include animation(experienceShow 0.7s linear);
+		display: none;
+    position: fixed;
+    right: -2em;
+    top: -3em;
+    width: 10em;
+
+    .experienceTalk{
+    	@include border-radius(5px);
+    	position: relative;
+			margin: 3em 0px 0px 0px;
+			opacity: 0;
+	    padding: .2em;
+	    font-size: .8em;
+	    color: white;
+	    background-color: rgba(128, 128, 128, .65);
+
+			&:before,{
+				@include traingle-left(rgba(128, 128, 128, 1), 1em);
+				content: '';
+				position: absolute;
+				top: -.9em;
+				left: 50%;
+				transform: translateX(-50%) rotateZ(45deg);
+
+			}
+    }
+
+    &.hover{
+    	right: 2em;
+    	> #experience{
+				transform: scale(1);
+    	}
+
+    	.experienceTalk{
+    		opacity: 1;
+    	}
+    }
+
+    &:hover{
+    	right: 2em;
+    	> #experience{
+				transform: scale(1);
+    	}
+
+    	.experienceTalk{
+    		opacity: 1;
+    	}
+    }
+	}
+
+	#experience{
+		@include transition(transform , .3s, ease-in);
+		cursor: move;
+		transform: scale(.6);
+		&:before, &:after{
+			@include animation-duration(.7s);
+			display: block;
+		}
+	}
+}

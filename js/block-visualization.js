@@ -1,3 +1,7 @@
+const windowWidth = $(window).width();
+const windowHeight = $(window).height();
+const errorDistance = 150;
+
 const data = {
 	header: {
 		title: '視覺化圖表',
@@ -12,3 +16,29 @@ let vmHeader = new Vue({
 		header: data.header
 	}
 });
+
+if(windowWidth >= 1280){
+	$(window).scroll(function () {
+	  var scrollVal = $(this).scrollTop();
+	  
+	  if( scrollVal < errorDistance){
+			$('.gogoGuide').addClass('hover');
+
+			window.setTimeout(function(){
+				$('.gogoGuide').removeClass('hover');
+			},2000);
+
+	  }else if(scrollVal > errorDistance){
+	  	$('.experienceTalk').html('「1999視覺化」<br>這是主人第一次組織團隊做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的統計意義。');
+	  }
+	});
+
+	$('.section-board').mouseover(function(){
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('哇～～要點開了嗎...好緊張...😀');
+	})
+
+	$('.section-board').mouseout(function(){
+		$('.gogoGuide').removeClass('hover');
+	})
+}

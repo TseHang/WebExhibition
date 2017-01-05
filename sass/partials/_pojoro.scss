@@ -6,7 +6,7 @@ $pojoro:(
 	wings-height: .4em
 );
 
-.pojoro  {
+.pojoro {
 	@include border-radius(100%);
 	@include transition(all .8s ease-in-out);
 	background-color: map-get($color-basic, white);
@@ -35,32 +35,25 @@ $pojoro:(
 	height: 1em;
 	margin: 5em auto 0 auto;
 	transform-origin: center;
-	
-	/* Separate the animations to have a better control over the eye and the body */
-	animation: eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite; 
 
+	/* Separate the animations to have a better control over the eye and the body */
+	@include animation( eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
 	/* Elevate and distort the creature. */
 	transform: scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);	
 
 	&:before, &:after{
 		/* wings */
-
 		@include border-radius(100%);
+		@include transition(all , .2s);
 		background-color: map-get($color-basic, white);
 		content: "";
 		
 		/* display:none, hide wings */
 		position: absolute;
 		-webkit-filter: blur(1px);
-		transition: all 0.2s;
-		animation-duration: map-get($pojoro, wings-ani-time);
-		animation-iteration-count: infinite;
-		animation-timing-function: ease-in-out;
-
 		background: rgba(100,100,100,0.8);
 	
-		/* display:block, we allow the wings to appear and the animation starts */
-		
+		/* display:block, we allow the wings to appear and the animation starts */	
 		display: block;
 		margin-left: 0em;
 		width: map-get($pojoro, wings-width);
@@ -73,7 +66,7 @@ $pojoro:(
 		margin-left: -1em;
 		transform-origin: left;
 		transform: rotate(-60deg);
-		animation-name: wings;
+		@include animation(wings map-get($pojoro, wings-ani-time) ease-in-out infinite)
 	}
 
 	&:after{
@@ -82,7 +75,7 @@ $pojoro:(
 		margin-left: 1em;
 		transform-origin: right;
 		transform: rotate(60deg);
-		animation-name: wings2;
+		@include animation(wings2 map-get($pojoro, wings-ani-time) ease-in-out infinite)
 	}
 
 	@media (min-width: map-get($break-point, screen-l)){
@@ -100,7 +93,7 @@ $pojoro:(
 } 
 
 // /* Elevate and distort the creature. */
-@keyframes eye  {
+@include keyframes(eye)  {
 
 	/* Eye movement */
 	
@@ -127,19 +120,19 @@ $pojoro:(
 	}
 }
 
-@keyframes body  {
+@include keyframes(pojoro-body)  {
 	50%  {
 		width: 1.4em; height: 1.4em;
 	} 
 }
 
-@keyframes wings  {
+@include keyframes(wings)  {
 	50%  {
 		transform: rotate(65deg);
 	}
 }
 
-@keyframes wings2  {
+@include keyframes(wings2)  {
 	50%  {
 		transform: rotate(-65deg);
 	}

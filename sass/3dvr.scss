@@ -1,8 +1,9 @@
 @import 'default/default';
+@import 'partials/pojoro';
+@import 'partials/experience';
 @import 'layout/page';
 @import 'partials/header';
 @import 'partials/footer';
-@import 'partials/pojoro';
 
 $main-color: map-get($color-block, blue);
 
@@ -53,5 +54,45 @@ header{
 	.board-img{
 		background: url(../img/3dvr_demo.png) no-repeat ;
 		background-size: cover;
+	}
+}
+
+/*
+ * pojoro
+ */ 
+@media (min-width: map-get($break-point, screen-l)){
+	#experience{
+		box-shadow:0 0 0 0.2em rgba(68, 155, 218, 0.8), 
+					0 0 0.1em 0.55em rgb(22, 128, 204), 
+					inset 0 0.2em 0 0 rgb(32, 113, 171);
+
+		@include animation( eye-vr 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
+	}
+
+	@include keyframes(eye-vr)  {
+
+		/* Eye movement */
+		
+		5%, 10%  {
+			line-height: 1.2em;
+			padding-left: 0em;
+		}
+		15%, 20%  {
+			line-height: 1.15em;
+			padding-left: 0.4em;
+		}
+		
+		/* Eyelash movement */
+		
+		25%  {
+			box-shadow:0 0 0 0.2em rgba(68, 155, 218, 0.8), 
+					0 0 0.1em 0.55em rgb(12, 128, 194), 
+					inset 0 0.2em 0 0 rgb(32, 113, 171);
+		}
+		23%, 27%  {
+			box-shadow:0 0 0 0.2em rgba(68, 155, 218, 0.8), 
+					0 0 0.1em 0.55em rgb(12, 128, 194), 
+					inset 0 0.2em 0 0 rgb(32, 113, 171);
+		}
 	}
 }

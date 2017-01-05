@@ -68,7 +68,7 @@ var route = [
     {
       data: {
         path: './',
-        title: 'Impact',
+        title: 'Impact 影響價值',
       },
       partials: './partial.js',
       layout:  "./layout/impact.hbs",

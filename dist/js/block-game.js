@@ -1,5 +1,8 @@
 'use strict';
 
+var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+var errorDistance = 80;
 var data = {
 	header: {
 		title: '遊戲',
@@ -14,3 +17,28 @@ var vmHeader = new Vue({
 		header: data.header
 	}
 });
+
+if (windowWidth >= 1280) {
+	$(window).scroll(function () {
+		var scrollVal = $(this).scrollTop();
+
+		if (scrollVal < errorDistance) {
+			$('.gogoGuide').addClass('hover');
+
+			window.setTimeout(function () {
+				$('.gogoGuide').removeClass('hover');
+			}, 2000);
+		} else if (scrollVal > errorDistance) {
+			$('.experienceTalk').html('「掌蚊宗師」<br>一個因應掌蚊人網站而生的遊戲！遊戲的所有元素都是主人親手製作，像是：配樂、設計稿、遊戲設定...希望大家會喜歡 ～');
+		}
+	});
+
+	$('.section-board').mouseover(function () {
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('這是Beta測試版遊戲！😀還沒上線給民眾，今日搶先公開 ><');
+	});
+
+	$('.section-board').mouseout(function () {
+		$('.gogoGuide').removeClass('hover');
+	});
+}

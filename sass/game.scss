@@ -1,8 +1,9 @@
 @import 'default/default';
+@import 'partials/pojoro';
+@import 'partials/experience';
 @import 'layout/page';
 @import 'partials/header';
 @import 'partials/footer';
-@import 'partials/pojoro';
 
 $main-color: map-get($color-block, purple);
 

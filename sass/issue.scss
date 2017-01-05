@@ -1,8 +1,9 @@
 @import 'default/default';
+@import 'partials/pojoro';
+@import 'partials/experience';
 @import 'layout/page';
 @import 'partials/header';
 @import 'partials/footer';
-@import 'partials/pojoro';
 
 $main-color: map-get($color-block, green);
 
@@ -53,5 +54,45 @@ header{
 	.board-img{
 		background: url(../img/theMosquitoMan.png) no-repeat ;
 		background-size: cover;
+	}
+}
+
+/*
+ * pojoro
+ */ 
+@media (min-width: map-get($break-point, screen-l)){
+	#experience{
+		box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
+					0 0 0.1em 0.55em rgba(29, 128, 91, 0.95), 
+					inset 0 0.2em 0 0 rgb(1, 107, 68);
+
+		@include animation(eye-issue 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
+	}
+
+	@include keyframes(eye-issue)  {
+
+		/* Eye movement */
+		
+		5%, 10%  {
+			line-height: 1.2em;
+			padding-left: 0em;
+		}
+		15%, 20%  {
+			line-height: 1.15em;
+			padding-left: 0.4em;
+		}
+		
+		/* Eyelash movement */
+		
+		25%  {
+			box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
+					0 0 0.1em 0.55em rgba(19, 128, 81, 0.95), 
+					inset 0 0.2em 0 0 rgb(1, 107, 68);
+		}
+		23%, 27%  {
+			box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
+					0 0 0.1em 0.55em rgba(19, 128, 81, 0.95), 
+					inset 0 0.2em 0 0 rgb(1, 107, 68);
+		}
 	}
 }

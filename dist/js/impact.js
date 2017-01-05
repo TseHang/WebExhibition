@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 //Initialize
 var s = skrollr.init({
@@ -10,43 +10,22 @@ var s = skrollr.init({
   constants: {
     initTop: 100
   },
-  //讓文本高度自動達到滿足Keyframe的條件
-  forceHeight: true,
-  //針對行動裝置的功能
-  mobileCheck: function mobileCheck() {},
+  forceHeight: true, //讓文本高度自動達到滿足Keyframe的條件
+  mobileCheck: function mobileCheck() {}, //針對行動裝置的功能
   mobileDeceleration: 0.004,
+
   //畫面一開始，元素的初始值set：物件上第一個影格的值，ease：相對畫面開始的Scrolltop值使用兩格影格作參考，reset:使用他原生的CSS值
   edgeStrategy: 'set',
-  //render事件
+  render: function render(data) {}
 
-  render: function render(data) {
-    console.log(data);
-    // 判斷雲出來的時機
-    //   if (parseInt($('.background').css("left")) < 0){
-    //     $('.cloud, .man-run-container').css('-webkit-animation-play-state', 'running')
-    //               .css('animation-play-state', 'running');
-    //   }
-    //   else{
-    //     $('.cloud, .man-run-container').css('-webkit-animation-play-state', 'paused')
-    //               .css('animation-play-state', 'paused');
-    //   }
+});
 
-    //   // 讓bar不見
-    //   if (data.curTop > 100 && data.direction == "down"){
-    //     navbarHidden() ;
-    //   }
-    //   else{
-    //     navbarShow() ;
-    //   }
+var experience = document.getElementById("experience");
+var hintText = document.getElementById("hint-text");
+experience.addEventListener('mouseover', function () {
+  hintText.innerHTML = 'Hi, 我是艾克斯・貝利恩斯，<br>請記住我的名子!';
+});
 
-    //   // 判斷小人是否要跑！！
-    //   if (data.curTop > (data.maxTop-errorDistance)){
-    //     $('.man-run-container').addClass("man-run-container-animation");
-    //     navbarShow() ;
-    //   }
-    //   else {
-    //     $('.man-run-container').removeClass("man-run-container-animation");
-    //   }
-  }
-
+experience.addEventListener('mouseout', function () {
+  hintText.innerHTML = '點我帶您飛回來的地方！';
 });

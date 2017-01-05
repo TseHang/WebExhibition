@@ -15,6 +15,12 @@ body{
 	height: 80%;
 	text-align: center;
 
+	.hint-text{
+		@extend %position_absolute;
+		top: 100%;	
+		font-size: .5em;
+	}
+
 	h3{
 		letter-spacing: map-get($letter-spacing, l);
     padding: 10em 1em 0px 1em;
@@ -38,6 +44,7 @@ body{
   display: flex;
 	align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .section-part{
@@ -203,6 +210,26 @@ body{
 
 		img{
 			width: 70%;
+		}
+	}
+}
+
+@media (min-width: map-get($break-point, screen-s)){
+	.wrap{
+		h3{
+			padding-top: 14em;
+		}
+	}
+
+	.section-content{
+		margin-top: 3em;
+	}
+}
+
+@media (min-width: map-get($break-point, screen-xl)){
+	.wrap{
+		h3{
+			padding-top: 20em;
 		}
 	}
 }

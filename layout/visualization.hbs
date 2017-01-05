@@ -77,6 +77,11 @@
 
 	</section>
 
+	<div class="gogoGuide">
+		<div id="experience" class="pojoro"> ● </div>
+		<p class="experienceTalk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p>
+	</div>
+
 	<footer class="footer">
 		{{> block-footer}}
 	</footer>
@@ -84,6 +89,15 @@
 
 </body>
 <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="dist/js/block-visualization.js"></script>
+
+<script type="text/javascript">
+	$('.gogoGuide').addClass('hover');	
+
+	window.setTimeout(function(){
+		$('.gogoGuide').removeClass('hover');
+	},2000);
+</script>
 
 </html>

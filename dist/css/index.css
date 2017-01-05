@@ -7,6 +7,30 @@
 /*
  *	Font
  */
+/*
+ * Keyframes
+ */
+@-moz-keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@-webkit-keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
 .board-title h1, .board-card, .row, .menu, .menu .list, .mobile-logo, .section-blocks .block, .section-blocks h2 {
   position: relative; }
 
@@ -503,7 +527,8 @@ body {
   width: 100%;
   font: 300 16px/1.62 "Noto Sans TC", sans-serif;
   background: #FFF;
-  color: #2A2B2A; }
+  color: #2A2B2A;
+  overflow-x: hidden; }
 
 img {
   max-width: 100%;
@@ -689,7 +714,9 @@ h1 {
   margin: 5em auto 0 auto;
   transform-origin: center;
   /* Separate the animations to have a better control over the eye and the body */
-  animation: eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+  -moz-animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
+  -webkit-animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
+  animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
   /* Elevate and distort the creature. */
   transform: scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0); }
   .pojoro:before, .pojoro:after {
@@ -697,15 +724,15 @@ h1 {
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
+    -moz-transition: all, 0.2s;
+    -o-transition: all, 0.2s;
+    -webkit-transition: all, 0.2s;
+    transition: all, 0.2s;
     background-color: #FFF;
     content: "";
     /* display:none, hide wings */
     position: absolute;
     -webkit-filter: blur(1px);
-    transition: all 0.2s;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
     background: rgba(100, 100, 100, 0.8);
     /* display:block, we allow the wings to appear and the animation starts */
     display: block;
@@ -718,14 +745,18 @@ h1 {
     margin-left: -1em;
     transform-origin: left;
     transform: rotate(-60deg);
-    animation-name: wings; }
+    -moz-animation: wings 0.5s ease-in-out infinite;
+    -webkit-animation: wings 0.5s ease-in-out infinite;
+    animation: wings 0.5s ease-in-out infinite; }
   .pojoro:after {
     top: 25%;
     left: -4.5em;
     margin-left: 1em;
     transform-origin: right;
     transform: rotate(60deg);
-    animation-name: wings2; }
+    -moz-animation: wings2 0.5s ease-in-out infinite;
+    -webkit-animation: wings2 0.5s ease-in-out infinite;
+    animation: wings2 0.5s ease-in-out infinite; }
   @media (min-width: 1280px) {
     .pojoro:before, .pojoro:after {
       display: none;
@@ -733,6 +764,32 @@ h1 {
     .pojoro:hover:before, .pojoro:hover:after {
       display: block; } }
 
+@-moz-keyframes eye {
+  /* Eye movement */
+  5%, 10% {
+    line-height: 1.2em;
+    padding-left: 0em; }
+  15%, 20% {
+    line-height: 1.15em;
+    padding-left: 0.4em; }
+  /* Eyelash movement */
+  25% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
+  23%, 27% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
+@-webkit-keyframes eye {
+  /* Eye movement */
+  5%, 10% {
+    line-height: 1.2em;
+    padding-left: 0em; }
+  15%, 20% {
+    line-height: 1.15em;
+    padding-left: 0.4em; }
+  /* Eyelash movement */
+  25% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
+  23%, 27% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
 @keyframes eye {
   /* Eye movement */
   5%, 10% {
@@ -746,16 +803,96 @@ h1 {
     box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
   23%, 27% {
     box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
-@keyframes body {
+@-moz-keyframes pojoro-body {
   50% {
     width: 1.4em;
     height: 1.4em; } }
+@-webkit-keyframes pojoro-body {
+  50% {
+    width: 1.4em;
+    height: 1.4em; } }
+@keyframes pojoro-body {
+  50% {
+    width: 1.4em;
+    height: 1.4em; } }
+@-moz-keyframes wings {
+  50% {
+    transform: rotate(65deg); } }
+@-webkit-keyframes wings {
+  50% {
+    transform: rotate(65deg); } }
 @keyframes wings {
   50% {
     transform: rotate(65deg); } }
+@-moz-keyframes wings2 {
+  50% {
+    transform: rotate(-65deg); } }
+@-webkit-keyframes wings2 {
+  50% {
+    transform: rotate(-65deg); } }
 @keyframes wings2 {
   50% {
     transform: rotate(-65deg); } }
+@media (min-width: 1280px) {
+  .gogoGuide {
+    -moz-transition: right, 0.6s, ease-in;
+    -o-transition: right, 0.6s, ease-in;
+    -webkit-transition: right, 0.6s, ease-in;
+    transition: right, 0.6s, ease-in;
+    -moz-animation: experienceShow 0.7s linear;
+    -webkit-animation: experienceShow 0.7s linear;
+    animation: experienceShow 0.7s linear;
+    display: none;
+    position: fixed;
+    right: -2em;
+    top: -3em;
+    width: 10em; }
+    .gogoGuide .experienceTalk {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      position: relative;
+      margin: 3em 0px 0px 0px;
+      opacity: 0;
+      padding: .2em;
+      font-size: .8em;
+      color: white;
+      background-color: rgba(128, 128, 128, 0.65); }
+      .gogoGuide .experienceTalk:before {
+        background: transparent;
+        border-color: gray transparent transparent gray;
+        border-style: solid;
+        border-width: 1em;
+        content: '';
+        position: absolute;
+        top: -.9em;
+        left: 50%;
+        transform: translateX(-50%) rotateZ(45deg); }
+    .gogoGuide.hover {
+      right: 2em; }
+      .gogoGuide.hover > #experience {
+        transform: scale(1); }
+      .gogoGuide.hover .experienceTalk {
+        opacity: 1; }
+    .gogoGuide:hover {
+      right: 2em; }
+      .gogoGuide:hover > #experience {
+        transform: scale(1); }
+      .gogoGuide:hover .experienceTalk {
+        opacity: 1; }
+
+  #experience {
+    -moz-transition: -moz-transform, 0.3s, ease-in;
+    -o-transition: -o-transform, 0.3s, ease-in;
+    -webkit-transition: -webkit-transform, 0.3s, ease-in;
+    transition: transform, 0.3s, ease-in;
+    cursor: move;
+    transform: scale(0.6); }
+    #experience:before, #experience:after {
+      -moz-animation-duration: 0.7s;
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+      display: block; } }
 .section {
   width: 100%;
   margin: 0px 0px 1em 0px; }
@@ -769,6 +906,9 @@ h1 {
   display: none;
   width: 100%;
   height: 100%; }
+
+.gogoGuide {
+  display: none; }
 
 .mobile-logo {
   text-align: center;
@@ -898,14 +1038,26 @@ h1 {
     .wrap > .pojoro {
       top: 60%;
       margin: 0px auto; }
+    .wrap > .hintText {
+      top: 70%;
+      font-weight: 400; }
+      .wrap > .hintText:before, .wrap > .hintText:after {
+        content: '"'; }
+    .wrap > .myName {
+      top: 85%;
+      font-size: .8em; }
     .wrap > p {
       position: absolute;
       transform: translateX(-50%);
       left: 50%;
-      top: 85%;
       color: #808080;
       letter-spacing: 4px; } }
 @media (min-width: 1280px) {
+  .section {
+    display: none; }
+    .section:nth-child(2) {
+      display: block; }
+
   .section-blocks .block {
     min-height: 35%; } }
 

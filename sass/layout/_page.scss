@@ -267,3 +267,30 @@ nav{
 		height: 25%;
 	}
 }
+
+@media (min-width: map-get($break-point, screen-l)){
+	.gogoGuide{
+		display: block !important;
+		&.hover{
+			> #experience{
+				&:before, &:after{
+					@include animation-duration(.7s);
+				}			
+			}
+		}
+
+		&:hover{
+			> #experience{
+				&:before, &:after{
+					@include animation-duration(.7s);
+				}			
+			}
+		}
+	}
+
+	#experience{
+		&:before, &:after{
+			@include animation-duration(1.2s);
+		}
+	}
+}

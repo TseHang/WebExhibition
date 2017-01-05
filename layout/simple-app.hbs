@@ -64,7 +64,7 @@
 		</div>
 
 		<div class="row">
-			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+			<div id="section-slotMachine" class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
 				<div id="board-slotMachine" class="board-img" onclick="window.open('https://ncku-ccs.github.io/slotMachine/slot_machine.html');"></div>
 				<div class="board-content">
 					<h2>神奇抽獎機</h2>
@@ -80,7 +80,7 @@
 		</div>
 
 		<div class="row">
-			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+			<div id="section-d3ForceSimple" class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
 				<div id="board-d3ForceSimple" class="board-img" onclick="window.open('https://tsehang.github.io/d3ForceSimple/');"></div>
 				<div class="board-content">
 					<h2>即時問卷系統</h2>
@@ -97,6 +97,11 @@
 
 	</section>
 
+	<div class="gogoGuide">
+		<div id="experience" class="pojoro"> ● </div>
+		<p class="experienceTalk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p>
+	</div>
+
 	<footer class="footer">
 		{{> block-footer}}
 	</footer>
@@ -104,6 +109,16 @@
 
 </body>
 <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="dist/js/block-simple-app.js"></script>
+
+<script type="text/javascript">
+	$('.gogoGuide').addClass('hover');	
+
+	window.setTimeout(function(){
+		$('.gogoGuide').removeClass('hover');
+	},2000);
+</script>
+
 
 </html>

@@ -1,5 +1,8 @@
 'use strict';
 
+var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+var errorDistance = 80;
 var data = {
 	header: {
 		title: '3D & VR',
@@ -14,3 +17,29 @@ var vmHeader = new Vue({
 		header: data.header
 	}
 });
+
+if (windowWidth >= 1280) {
+	$(window).scroll(function () {
+		var scrollVal = $(this).scrollTop();
+
+		if (scrollVal < errorDistance) {
+			$('.gogoGuide').addClass('hover');
+			// $('.experienceTalk').html('我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊');
+
+			window.setTimeout(function () {
+				$('.gogoGuide').removeClass('hover');
+			}, 2000);
+		} else if (scrollVal > errorDistance) {
+			$('.experienceTalk').html('「3D & VR」<br>是近期一個很夯的話題，主人針對專題展場做了一點小應用，希望大家喜歡！');
+		}
+	});
+
+	$('.section-board').mouseover(function () {
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('用手機來玩看看吧！😀');
+	});
+
+	$('.section-board').mouseout(function () {
+		$('.gogoGuide').removeClass('hover');
+	});
+}

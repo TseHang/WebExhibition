@@ -56,8 +56,8 @@
 		</div>
 
 		<div class="row">
-			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
-				<div id="board-slotMachine" class="board-img" onclick="window.open('http://tsehang.github.io/Review2015/#/');"></div>
+			<div id="section-review2015" class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+				<div id="board-review2015" class="board-img" onclick="window.open('http://tsehang.github.io/Review2015/#/');"></div>
 				<div class="board-content">
 					<h2>Review 2015</h2>
 					<p class="color-green-pink">回顧2015重大事件</p>
@@ -72,7 +72,7 @@
 		</div>
 
 		<div class="row">
-			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+			<div id="section-happiness" class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
 				<div id="board-happiness" class="board-img" onclick="window.open('https://www.taiwanstat.com/happiness/#/');"></div>
 				<div class="board-content">
 					<h2>幸福的定義</h2>
@@ -89,6 +89,11 @@
 
 	</section>
 
+	<div class="gogoGuide">
+		<div id="experience" class="pojoro"> ● </div>
+		<p class="experienceTalk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p>
+	</div>
+
 	<footer class="footer">
 		{{> block-footer}}
 	</footer>
@@ -96,6 +101,15 @@
 
 </body>
 <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="dist/js/block-story.js"></script>
+
+<script type="text/javascript">
+	$('.gogoGuide').addClass('hover');	
+
+	window.setTimeout(function(){
+		$('.gogoGuide').removeClass('hover');
+	},2000);
+</script>
 
 </html>

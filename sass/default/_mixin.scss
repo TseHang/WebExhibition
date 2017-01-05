@@ -21,3 +21,12 @@
   border-radius: 100%;
   background: transparent;
 }
+
+
+/*
+ * Keyframes
+ */
+@include keyframes(experienceShow) {
+  from{ opacity: 0; transform: scale(0);}
+  to{ opacity: 1; transform: scale(1);}
+}

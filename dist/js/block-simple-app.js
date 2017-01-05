@@ -1,5 +1,8 @@
 'use strict';
 
+var windowWidth = $(window).width();
+var windowHeight = $(window).height();
+var errorDistance = 150;
 var data = {
 	header: {
 		title: '有趣小應用',
@@ -14,3 +17,33 @@ var vmHeader = new Vue({
 		header: data.header
 	}
 });
+
+if (windowWidth >= 1280) {
+	$(window).scroll(function () {
+		var scrollVal = $(this).scrollTop();
+
+		if (scrollVal < errorDistance) {
+			$('.gogoGuide').addClass('hover');
+
+			window.setTimeout(function () {
+				$('.gogoGuide').removeClass('hover');
+			}, 2000);
+		} else if (scrollVal > errorDistance) {
+			$('.experienceTalk').html('「抽獎系統」<br>「即時問卷系統」<br>都是一些平常可見的小事情，但在這邊卻有一種化腐朽為神奇地感覺呢！');
+		}
+	});
+
+	$('#section-slotMachine').mouseover(function () {
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('結合跑馬燈與抽獎箱的元素，抽到我吧！！😀');
+	});
+
+	$('#section-d3ForceSimple').mouseover(function () {
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('超酷的互動系統，有廠商還找我們洽談合作可能性呢！😀');
+	});
+
+	$('.section-board').mouseout(function () {
+		$('.gogoGuide').removeClass('hover');
+	});
+}

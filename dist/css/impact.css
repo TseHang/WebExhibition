@@ -7,10 +7,34 @@
 /*
  *	Font
  */
+/*
+ * Keyframes
+ */
+@-moz-keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@-webkit-keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+@keyframes experienceShow {
+  from {
+    opacity: 0;
+    transform: scale(0); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
 .row, .menu, .menu .list, .pojoro-box, .section-part, .section-part .top-date, .part-img-box .part-img, .section-end {
   position: relative; }
 
-.section-part .left-bar, .section-part .top-date:after, .part-img-box p, .section-end .left-bar, .section-end:after {
+.wrap .hint-text, .section-part .left-bar, .section-part .top-date:after, .part-img-box p, .section-end .left-bar, .section-end:after {
   position: absolute; }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
@@ -435,7 +459,8 @@ body {
   width: 100%;
   font: 300 16px/1.62 "Noto Sans TC", sans-serif;
   background: #FFF;
-  color: #2A2B2A; }
+  color: #2A2B2A;
+  overflow-x: hidden; }
 
 img {
   max-width: 100%;
@@ -621,7 +646,9 @@ h1 {
   margin: 5em auto 0 auto;
   transform-origin: center;
   /* Separate the animations to have a better control over the eye and the body */
-  animation: eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+  -moz-animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
+  -webkit-animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
+  animation: eye 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite;
   /* Elevate and distort the creature. */
   transform: scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0); }
   .pojoro:before, .pojoro:after {
@@ -629,15 +656,15 @@ h1 {
     -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
     border-radius: 100%;
+    -moz-transition: all, 0.2s;
+    -o-transition: all, 0.2s;
+    -webkit-transition: all, 0.2s;
+    transition: all, 0.2s;
     background-color: #FFF;
     content: "";
     /* display:none, hide wings */
     position: absolute;
     -webkit-filter: blur(1px);
-    transition: all 0.2s;
-    animation-duration: 0.5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
     background: rgba(100, 100, 100, 0.8);
     /* display:block, we allow the wings to appear and the animation starts */
     display: block;
@@ -650,14 +677,18 @@ h1 {
     margin-left: -1em;
     transform-origin: left;
     transform: rotate(-60deg);
-    animation-name: wings; }
+    -moz-animation: wings 0.5s ease-in-out infinite;
+    -webkit-animation: wings 0.5s ease-in-out infinite;
+    animation: wings 0.5s ease-in-out infinite; }
   .pojoro:after {
     top: 25%;
     left: -4.5em;
     margin-left: 1em;
     transform-origin: right;
     transform: rotate(60deg);
-    animation-name: wings2; }
+    -moz-animation: wings2 0.5s ease-in-out infinite;
+    -webkit-animation: wings2 0.5s ease-in-out infinite;
+    animation: wings2 0.5s ease-in-out infinite; }
   @media (min-width: 1280px) {
     .pojoro:before, .pojoro:after {
       display: none;
@@ -665,6 +696,32 @@ h1 {
     .pojoro:hover:before, .pojoro:hover:after {
       display: block; } }
 
+@-moz-keyframes eye {
+  /* Eye movement */
+  5%, 10% {
+    line-height: 1.2em;
+    padding-left: 0em; }
+  15%, 20% {
+    line-height: 1.15em;
+    padding-left: 0.4em; }
+  /* Eyelash movement */
+  25% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
+  23%, 27% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
+@-webkit-keyframes eye {
+  /* Eye movement */
+  5%, 10% {
+    line-height: 1.2em;
+    padding-left: 0em; }
+  15%, 20% {
+    line-height: 1.15em;
+    padding-left: 0.4em; }
+  /* Eyelash movement */
+  25% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
+  23%, 27% {
+    box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
 @keyframes eye {
   /* Eye movement */
   5%, 10% {
@@ -678,13 +735,33 @@ h1 {
     box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 1em 0 0 #884f8b; }
   23%, 27% {
     box-shadow: 0 0 0 0.2em #925995, 0 0 0.1em 0.55em #a659a9, inset 0 0.2em 0 0 #884f8b; } }
-@keyframes body {
+@-moz-keyframes pojoro-body {
   50% {
     width: 1.4em;
     height: 1.4em; } }
+@-webkit-keyframes pojoro-body {
+  50% {
+    width: 1.4em;
+    height: 1.4em; } }
+@keyframes pojoro-body {
+  50% {
+    width: 1.4em;
+    height: 1.4em; } }
+@-moz-keyframes wings {
+  50% {
+    transform: rotate(65deg); } }
+@-webkit-keyframes wings {
+  50% {
+    transform: rotate(65deg); } }
 @keyframes wings {
   50% {
     transform: rotate(65deg); } }
+@-moz-keyframes wings2 {
+  50% {
+    transform: rotate(-65deg); } }
+@-webkit-keyframes wings2 {
+  50% {
+    transform: rotate(-65deg); } }
 @keyframes wings2 {
   50% {
     transform: rotate(-65deg); } }
@@ -697,6 +774,9 @@ body {
   width: 100%;
   height: 80%;
   text-align: center; }
+  .wrap .hint-text {
+    top: 100%;
+    font-size: .5em; }
   .wrap h3 {
     letter-spacing: 6px;
     padding: 10em 1em 0px 1em; }
@@ -715,7 +795,8 @@ body {
   background-color: #FFF;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column; }
 
 .section-part {
   opacity: 0; }
@@ -833,5 +914,14 @@ body {
     margin-left: 3em; }
     .part-event img {
       width: 70%; } }
+@media (min-width: 1024px) {
+  .wrap h3 {
+    padding-top: 14em; }
+
+  .section-content {
+    margin-top: 3em; } }
+@media (min-width: 1350px) {
+  .wrap h3 {
+    padding-top: 20em; } }
 
 /*# sourceMappingURL=impact.css.map */

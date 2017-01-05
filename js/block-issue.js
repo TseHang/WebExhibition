@@ -1,3 +1,6 @@
+const windowWidth = $(window).width();
+const windowHeight = $(window).height();
+const errorDistance = 80;
 const data = {
 	header: {
 		title: '深度議題',
@@ -14,3 +17,30 @@ let vmHeader = new Vue({
 		header: data.header
 	}
 });
+
+if(windowWidth >= 1280){
+	$(window).scroll(function () {
+	  var scrollVal = $(this).scrollTop();
+	  
+	  if( scrollVal < errorDistance){
+			$('.gogoGuide').addClass('hover');
+			// $('.experienceTalk').html('我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊');
+
+			window.setTimeout(function(){
+				$('.gogoGuide').removeClass('hover');
+			},2000);
+
+	  }else if(scrollVal > errorDistance){
+	  	$('.experienceTalk').html('「掌蚊人」<br>主人的第一個大型專案，從發想、尋找適合的設計師、溝通討論...到最後內容編輯製作完成共花了 3個月。');
+	  }
+	});
+
+	$('.section-board').mouseover(function(){
+		$('.gogoGuide').addClass('hover');
+		$('.experienceTalk').html('來把！一場對抗登革熱的修煉！😀');
+	})
+
+	$('.section-board').mouseout(function(){
+		$('.gogoGuide').removeClass('hover');
+	})
+}

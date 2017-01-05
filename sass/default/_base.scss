@@ -6,6 +6,7 @@ body {
   font: 300 16px/1.62 $font-noto;
   background: $color-default--bg;
   color: map-get($color-basic, black-light);
+  overflow-x: hidden;
 }
 
 img {
