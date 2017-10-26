@@ -5,42 +5,52 @@
 @import 'partials/pojoro';
 @import 'partials/experience';
 
-.section{
-	width: 100%;
+.section {
+  width: 100%;
   margin: 0px 0px 1em 0px;
 
-  &:nth-child(3){
-  	margin-top: 1em;
-  	margin-bottom: 4em;
+  &:nth-child(4) {
+    margin-bottom: 0;
   }
 
-  &:nth-child(4){
-  	margin-bottom: 0px;
+  &:nth-child(5) {
+    margin-top: 1em;
+    margin-bottom: 4em;
+  }
+
+  &:nth-child(6) {
+    margin-bottom: 0;
+  }
+
+  &.section-start {
+    margin-top: calc(#{$nav-max-height} + 1em);
   }
 }
 
-.wrap{
-	display: none;
-	width: 100%;
-	height: 100%;
+.wrap {
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 
-.mobile-logo{
-	@extend %position_relative;
+.mobile-logo {
+  @extend %position_relative;
+  @include transform(skewX(-4deg) skewY(-2deg));
   text-align: center;
   color: map-get($color-block, red-pink);
-	
-	> h1{
-    font-weight: 400;
-    font-size: 1.1em;
-    letter-spacing: map-get($letter-spacing, s);
-	}
+  margin-bottom: 2em;
 
-  &:after{
-  	@extend %position_absolute;
-  	@include animation(bottomUp .3s linear);
-  	animation-fill-mode: forwards;
-		content: '';
+  > h1 {
+    font-weight: 400;
+    font-size: 1.8em;
+    letter-spacing: map-get($letter-spacing, s);
+  }
+
+  &:after {
+    @extend %position_absolute;
+    @include animation(bottomUp 0.3s linear);
+    animation-fill-mode: forwards;
+    content: '';
     width: 90%;
     height: 1px;
     bottom: 0px;
@@ -50,212 +60,217 @@
     background-color: map-get($color-block, red-pink);
   }
 
-  @media (min-width: map-get($break-point, table-l) ){
-  	display: none;
+  @media (min-width: map-get($break-point, table-l)) {
+    display: none;
   }
 }
 
 /*
  *	section-board
  */
-.board-title{
-	@extend %board-title;
+.board-title {
+  @extend %board-title;
 }
 
-.board-card{
-	@extend %board-content;
+.board-card {
+  @extend %board-content;
 
-	a{
-  	margin-bottom: .3em;
+  a {
+    margin-bottom: 0.3em;
 
-  	&:hover{
-  		color: map-get($color-block, red-pink);
-  	}
-	}
+    &:hover {
+      color: map-get($color-block, red-pink);
+    }
+  }
 
-	i{
-		font-size: 1.8em;
-		margin-right: .2em;
-	}
+  i {
+    font-size: 1.8em;
+    margin-right: 0.2em;
+  }
 }
 
 /*
  *	section-block
  */
-.section-blocks{
-	text-align: center;
+.section-blocks {
+  text-align: center;
 
-	.block{
-		@extend %position_relative;
-		cursor: pointer;
-		min-height: 35%;
-		padding: 0px;
-		color: map-get($color-basic, white);
-	}
+  .block {
+    @extend %position_relative;
+    cursor: pointer;
+    min-height: 35%;
+    padding: 0px;
+    color: map-get($color-basic, white);
+  }
 
-	.in-block{
-		@extend %position_absolute;
-		@include transition(background-color .3s ease-in);
-		width: 100%;
-		height: 100%;
-	}
+  .in-block {
+    @extend %position_absolute;
+    @include transition(background-color 0.3s ease-in);
+    width: 100%;
+    height: 100%;
+  }
 
-	h2{
+  h2 {
     @extend %position_relative;
     width: 60%;
     left: 20%;
     font-weight: 400;
 
-    &:after{
-    	@extend %position_absolute;
-	    content: '';
-	    width: 120%;
-	    height: 2px;
-	    left: -10%;
-	    bottom: -3px;
+    &:after {
+      @extend %position_absolute;
+      content: '';
+      width: 120%;
+      height: 2px;
+      left: -10%;
+      bottom: -3px;
 
-	    background-color: map-get($color-basic, white);
+      background-color: map-get($color-basic, white);
     }
-	}
+  }
 
-	p{
-		padding: 0px 10%;
-	}
+  p {
+    padding: 0px 10%;
+  }
 }
 
-.block{
-	.row-1 &{
-		&:nth-child(1){
-			background-image: url(../img/3dvr.jpg);
-			background-size: cover;
-		}
+.block {
+  .row-1 & {
+    &:nth-child(1) {
+      background-image: url(../img/3dvr.jpg);
+      background-size: cover;
+    }
 
-		&:nth-child(2){
-			background:transparent url(../img/logo.svg) center;
-			background-size: cover;
-		}		
-	}
+    &:nth-child(2) {
+      background: transparent url(../img/logo.svg) center;
+      background-size: cover;
+    }
+  }
 
-	.row-2 &{
-		&:nth-child(1){
-			background-image: url(../img/simple-app.png);
-			background-size: cover;
-		}
+  .row-2 & {
+    &:nth-child(1) {
+      background-image: url(../img/simple-app.png);
+      background-size: cover;
+    }
 
-		&:nth-child(2){
-			background-image: url(../img/visualization.png);
-			background-size: cover;
-		}		
-	}
+    &:nth-child(2) {
+      background-image: url(../img/visualization.png);
+      background-size: cover;
+    }
+  }
 
-	.row-3 &{
-		&:nth-child(1){
-			background-image: url(../img/story.png);
-			background-size: cover;
-		}
+  .row-3 & {
+    &:nth-child(1) {
+      background-image: url(../img/story.png);
+      background-size: cover;
+    }
 
-		&:nth-child(2){
-			background-image: url(../img/game.png);
-			background-size: cover;
-		}		
-	}
+    &:nth-child(2) {
+      background-image: url(../img/game.png);
+      background-size: cover;
+    }
+  }
 }
 
-#block-blue{
-	background-color: rgba(63, 169, 245, .7);
-	&:hover{
-		background-color: rgba(63, 169, 245, .2);
-	}
+#block-blue {
+  background-color: rgba(63, 169, 245, 0.7);
+  &:hover {
+    background-color: rgba(63, 169, 245, 0.2);
+  }
 }
 
-#block-green{
-	background-color: rgba(2, 184, 117, .95);
-	&:hover{
-		background-color: rgba(2, 184, 117, .4);
-	}
+#block-green {
+  background-color: rgba(2, 184, 117, 0.95);
+  &:hover {
+    background-color: rgba(2, 184, 117, 0.4);
+  }
 }
 
-#block-red-pink{
-	background-color: rgba(236, 141, 129, .95);
-	&:hover{
-		background-color: rgba(236, 141, 129, .5);
-	}
+#block-red-pink {
+  background-color: rgba(236, 141, 129, 0.95);
+  &:hover {
+    background-color: rgba(236, 141, 129, 0.5);
+  }
 }
 
-#block-yellow-earthy{
-	background-color: rgba(231, 183, 136, .95);
-	&:hover{
-		background-color: rgba(231, 183, 136, .4);
-	}
+#block-yellow-earthy {
+  background-color: rgba(231, 183, 136, 0.95);
+  &:hover {
+    background-color: rgba(231, 183, 136, 0.4);
+  }
 }
 
-#block-green-pink{
-	background-color: rgba(135, 197, 164, .9);
-	&:hover{
-		background-color: rgba(135, 197, 164, .2);
-	}
+#block-green-pink {
+  background-color: rgba(135, 197, 164, 0.9);
+  &:hover {
+    background-color: rgba(135, 197, 164, 0.2);
+  }
 }
 
-#block-purple{
-	background-color: rgba(141, 130, 196, .9);
-	&:hover{
-		background-color: rgba(141, 130, 196, .2);
-	}
+#block-purple {
+  background-color: rgba(141, 130, 196, 0.9);
+  &:hover {
+    background-color: rgba(141, 130, 196, 0.2);
+  }
 }
 
 /*
  * break-point
  */
-@media (min-width: map-get($break-point, table-l) ){
-	.gogoGuide{
-		.experience-close{
-			color: map-get($color-block, purple);
-		}
-	}
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    .fa-icon {
+      color: map-get($color-block, purple);
+    }
+  }
 
-	.board-card{
-		padding: 2rem 3rem .5rem;
-	}
-	
-	.wrap{
-		display: block;
-		text-align: center;
-		background-color: map-get($color-basic, skin);
-		
-		> .pojoro{
-			top: 60%;
-			margin: 0px auto;
-		}
+  .board-card {
+    padding: 2rem 3rem 0.5rem;
+  }
 
-		> .hintText{
-			top: 70%;
-			font-weight: 400;
+  .section {
+    &:nth-child(4) {
+      display: block;
+      margin-top: 0;
+    }
+  }
 
-			&:before, &:after{
-				content: '"';
-			}
-		}
+  .wrap {
+    display: block;
+    text-align: center;
+    background-color: map-get($color-basic, skin);
 
-		> .myName{
-			top: 85%;
-			font-size: .8em;
-		}
+    > .pojoro {
+      top: 60%;
+      margin: 0px auto;
+    }
 
-		> p{
-			position: absolute;
-			transform: translateX(-50%);
-			left: 50%;
-			color: map-get($color-basic, gray-dark);
-			letter-spacing: map-get($letter-spacing, m);
-		}
-	}
+    > .hintText {
+      top: 70%;
+      font-weight: 400;
+
+      &:before,
+      &:after {
+        content: '"';
+      }
+    }
+
+    > .myName {
+      top: 85%;
+      font-size: 0.8em;
+    }
+
+    > p {
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      color: map-get($color-basic, gray-dark);
+      letter-spacing: map-get($letter-spacing, m);
+    }
+  }
 }
 
-@media (min-width: map-get($break-point, screen-l)){
-	.section{
-		display: none;
-		&:nth-child(2){
-			display: block;
-		}
-	}
+@media (min-width: map-get($break-point, screen-l)) {
+  .section {
+    display: none;
+  }
 }

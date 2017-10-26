@@ -7,115 +7,110 @@
 
 $main-color: map-get($color-block, green-pink);
 
-header{
-	@extend %position_relative;
-	background: transparent url(../img/story.png) ;
+header {
+  @extend %position_relative;
+  background: transparent url(../img/story.png);
   background-size: cover;
 }
 
-.header-content{
-	background-color: rgba(135, 197, 164, 0.9);
+.header-content {
+  background-color: rgba(135, 197, 164, 0.9);
 
-	&:hover{
-		background-color: rgba(135, 197, 164, 0.5);
-	}
-}
-
-nav{
-	h3{
-		&:nth-child(1){
-			border-right: solid 0px;
-		}
-	}
-}
-.footer{
-	background-color: $main-color;
-}
-
-.contact{
-	padding-top: 1em;
-	text-align: center;
-}
-
-.section-title{
-	h1{
-		&:after{
-			background-color: $main-color;
-		}
-	}
-}
-
-.section-board{
-	&:before{
-		border-color: $main-color transparent transparent $main-color;
-	}
-
-	&:after{
-		border-color: transparent $main-color $main-color transparent ;
-	}
-	
-	.circle{
-		border-color: $main-color;
-	}
-
-	.board-img{
-		background: url(../img/review2015.png) no-repeat ;
-		background-size: cover;
-	}
-}
-
-#board-happiness{
-	background: url(../img/happiness.png) no-repeat ;
-	background-size: cover;
-
-	&:hover{
-  	background-position: 30% 30%;
-  	background-size: 130%;
+  &:hover {
+    background-color: rgba(135, 197, 164, 0.5);
   }
+}
+
+nav {
+  h3 {
+    &:nth-child(1) {
+      border-right: solid 0px;
+    }
+  }
+}
+
+.section-title {
+  h1 {
+    &:after {
+      background-color: $main-color;
+    }
+  }
+}
+
+.section-board {
+  &:before {
+    border-color: $main-color transparent transparent $main-color;
+  }
+
+  &:after {
+    border-color: transparent $main-color $main-color transparent;
+  }
+
+  .circle {
+    border-color: $main-color;
+  }
+
+  .board-img {
+    background: url(../img/review2015.png) no-repeat;
+    background-size: cover;
+  }
+}
+
+#board-happiness {
+  background: url(../img/happiness.png) no-repeat;
+  background-size: cover;
+
+  &:hover {
+    background-position: 30% 30%;
+    background-size: 130%;
+  }
+}
+
+#footer {
+  background-color: $main-color;
 }
 
 /*
  * pojoro
- */ 
-@media (min-width: map-get($break-point, table-l)){
-	.gogoGuide{
-		.experience-close{
-			color: $main-color;
-		}
-	}
-	
-	#experience{
-		box-shadow:0 0 0 0.2em rgb(91,132,110), 
-					0 0 0.1em 0.55em rgb(109,173,139), 
-					inset 0 0.2em 0 0 rgb(71,128,98);
+ */
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    .fa-icon {
+      color: $main-color;
+    }
+  }
 
-		@include animation( eye-story 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
-	}
+  #experience {
+    box-shadow: 0 0 0 0.2em rgb(91, 132, 110),
+      0 0 0.1em 0.55em rgb(109, 173, 139), inset 0 0.2em 0 0 rgb(71, 128, 98);
 
-	@include keyframes(eye-story)  {
+    @include animation( eye-story 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
+  }
 
-		/* Eye movement */
-		
-		5%, 10%  {
-			line-height: 1.2em;
-			padding-left: 0em;
-		}
-		15%, 20%  {
-			line-height: 1.15em;
-			padding-left: 0.4em;
-		}
-		
-		/* Eyelash movement */
-		
-		25%  {
-			box-shadow:0 0 0 0.2em rgb(91,132,110), 
-						0 0 0.1em 0.55em rgb(99,173,129), 
-						inset 0 0.2em 0 0 rgb(71,128,98);
-		}
-		23%, 27%  {
-			box-shadow:0 0 0 0.2em rgb(91,132,110), 
-					0 0 0.1em 0.55em rgb(99,173,129), 
-					inset 0 0.2em 0 0 rgb(71,128,98);
-		}
-	}
+  @include keyframes(eye-story) {
+    /* Eye movement */
+
+    5%,
+    10% {
+      line-height: 1.2em;
+      padding-left: 0em;
+    }
+    15%,
+    20% {
+      line-height: 1.15em;
+      padding-left: 0.4em;
+    }
+
+    /* Eyelash movement */
+
+    25% {
+      box-shadow: 0 0 0 0.2em rgb(91, 132, 110),
+        0 0 0.1em 0.55em rgb(99, 173, 129), inset 0 0.2em 0 0 rgb(71, 128, 98);
+    }
+    23%,
+    27% {
+      box-shadow: 0 0 0 0.2em rgb(91, 132, 110),
+        0 0 0.1em 0.55em rgb(99, 173, 129), inset 0 0.2em 0 0 rgb(71, 128, 98);
+    }
+  }
 }

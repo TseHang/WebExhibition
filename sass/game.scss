@@ -7,60 +7,59 @@
 
 $main-color: map-get($color-block, purple);
 
-header{
-	@extend %position_relative;
-	background: transparent url(../img/game.png) ;
+header {
+  @extend %position_relative;
+  background: transparent url(../img/game.png);
   background-size: cover;
 }
 
-.header-content{
-	background-color: rgba(141, 130, 196, 0.9);
+.header-content {
+  background-color: rgba(141, 130, 196, 0.9);
 
-	&:hover{
-		background-color: rgba(141, 130, 196, 0.2);
-	}
+  &:hover {
+	background-color: rgba(141, 130, 196, 0.2);
+  }
 }
 
-.footer{
-	background-color: $main-color;
+.section-title {
+  h1 {
+    &:after {
+      background-color: $main-color;
+    }
+  }
 }
 
-.contact{
-	padding-top: 1em;
-	text-align: center;
+.section-board {
+  &:before {
+    border-color: $main-color transparent transparent $main-color;
+  }
+
+  &:after {
+    border-color: transparent $main-color $main-color transparent;
+  }
+
+  .circle {
+    border-color: $main-color;
+  }
+
+  .board-img {
+    background: url(../img/game_demo.png) no-repeat;
+    background-size: cover;
+  }
 }
 
-.section-title{
-	h1{
-		&:after{
-			background-color: $main-color;
-		}
-	}
+#footer {
+  background-color: $main-color;
 }
 
-.section-board{
-	&:before{
-		border-color: $main-color transparent transparent $main-color;
-	}
 
-	&:after{
-		border-color: transparent $main-color $main-color transparent ;
-	}
-	
-	.circle{
-		border-color: $main-color;
-	}
-
-	.board-img{
-		background: url(../img/game_demo.png) no-repeat ;
-		background-size: cover;
-	}
-}
-
-@media (min-width: map-get($break-point, table-l)){
-	.gogoGuide{
-		.experience-close{
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    .fa-icon{
 			color: $main-color;
 		}
-	}
+  }
+
+  // Because the porojo's color is purple initially,
+  // so we don't need to modify the color.
 }

@@ -3,233 +3,275 @@
 @import 'partials/footer';
 @import 'partials/pojoro';
 
-body{
-	background-color: map-get($color-basic, skin);
-	letter-spacing: map-get($letter-spacing, s);
-	height: auto !important;
+body {
+  background-color: map-get($color-basic, skin);
+  letter-spacing: map-get($letter-spacing, s);
+  height: auto !important;
 }
 
+.wrap {
+  @include transform(skewX(-4deg) skewY(-2deg));
+  width: 100%;
+  text-align: center;
+  margin-top: 7em;
 
-.wrap{
-	width: 100%;
-	height: 80%;
-	text-align: center;
+  h3 {
+    letter-spacing: map-get($letter-spacing, l);
+    padding: 0 1em;
+  }
 
-	.hint-text{
-		@extend %position_absolute;
-		top: 100%;	
-		font-size: .7em;
-	}
-
-	h3{
-		letter-spacing: map-get($letter-spacing, l);
-    padding: 10em 1em 0px 1em;
-	}
-
-	p{
-		padding: 0px 2em;
-	}
-}
-
-.section-content{
-	margin-top: 8em;
-}
-
-.pojoro-box{
-	@include border-radius(100%);
-	@extend %position_relative;
-	margin: auto;
-  width: 10em;
-  height: 10em;
-  top: 50%;
-  transform: translateY(-100%);
-  background-color: map-get($color-basic, white);
-
-  display: flex;
-	align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.section-part{
-	@extend %position_relative;
-	opacity:0;
-
-	.left-bar{
-		@extend %position_absolute;
-		width: .7em;
-		height: 100%;
-		top: 0px;
-		left: 0px;
-		background-color: map-get($color-block, blue)
-	}
-
-	.top-date{
-    @extend %position_relative;
-    width: 6em;
-
-		p{
-			padding-left: .8em;
-		}
-
-		&.date-long{
-			width: 11em;			
-		}
-
-		&:after{
-			@extend %position_absolute;
-	    content: '';
-	    width: 110%;
-	    height: .5em;
-	    bottom: 0px;
-	    transform: translateY(100%);
-	    border-bottom-right-radius: 1em;
-	    border-top-right-radius: 1em;
-
-	    background-color: map-get($color-block, blue);
-		}
-	}
-}
-
-
-.part-img-box{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content:center;
-
-	.part-img{
-		@extend %position_relative;
-		@include border-radius(25px);
-		width: 80%;
-		height: 30%;
-    margin: 2em 5%;
-	}
-
-	p{
-		@extend %position_absolute;
-    left: 50%;
-    bottom: 0px;
-    transform: translateX(-50%) translateY(160%);
-	}
-}
-
-.part-event{
-  margin: 1em 1em 1em 2em;
-  color: map-get($color-basic, gray-dark);
-
-  img{
-  	width: 100%;
+  p {
+    padding: 0px 2em;
   }
 }
 
-#review2015{
-	background: white url(../img/review2015.png) center;
-	background-size: cover;
+.section-content {
+  margin-top: 10em;
 }
 
-#happiness{
-	background: white url(../img/happiness.png) center;
-	background-size: cover;
+.section-part {
+  @extend %position_relative;
+  opacity: 0;
+
+  .left-bar {
+    @extend %position_absolute;
+    width: 0.7em;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: map-get($color-block, blue);
+  }
+
+  .top-date {
+    @extend %position_relative;
+    width: 6em;
+
+    p {
+      padding-left: 0.8em;
+    }
+
+    &.date-long {
+      width: 11em;
+    }
+
+    &:after {
+      @extend %position_absolute;
+      content: '';
+      width: 110%;
+      height: 0.5em;
+      bottom: 0px;
+      transform: translateY(100%);
+      border-bottom-right-radius: 1em;
+      border-top-right-radius: 1em;
+
+      background-color: map-get($color-block, blue);
+    }
+  }
 }
 
-#realtime-draw{
-	background: white url(../img/simple-app_demo.png) center;
-	background-size: cover;	
+.part-img-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .part-img {
+    @extend %position_relative;
+    @include border-radius(25px);
+    width: 80%;
+    height: 30%;
+    margin: 2em 5%;
+  }
+
+  p {
+    @extend %position_absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%) translateY(160%);
+  }
 }
 
-#draw-demo-video{
-	cursor: pointer;
-	background: white url(../img/draw_demo.png) center;
-	background-size: cover;	
+.part-event {
+  margin: 1em 1em 1em 2em;
+  color: map-get($color-basic, gray-dark);
 
-	&:hover{
-		box-shadow: inset 0px 0px 7px 5px rgba(42, 43, 42, 0.7);
+  img {
+    width: 100%;
+  }
+}
+
+#review2015 {
+  background: white url(../img/review2015.png) center;
+  background-size: cover;
+}
+
+#happiness {
+  background: white url(../img/happiness.png) center;
+  background-size: cover;
+}
+
+#realtime-draw {
+  background: white url(../img/simple-app_demo.png) center;
+  background-size: cover;
+}
+
+#draw-demo-video {
+  cursor: pointer;
+  background: white url(../img/draw_demo.png) center;
+  background-size: cover;
+
+  &:hover {
+    box-shadow: inset 0px 0px 7px 5px rgba(42, 43, 42, 0.7);
+  }
+}
+
+#theMosquitoMan {
+  background: white url(../img/theMosquitoMan.png) center;
+  background-size: cover;
+}
+
+#theMosquitoMan_game {
+  background: white url(../img/game.png) center;
+  background-size: cover;
+}
+
+#slotMachine {
+  background: white url(../img/slotMachine.png) center;
+  background-size: cover;
+}
+
+#proj-1999 {
+  background: white url(../img/visualization_demo.png) center;
+  background-size: cover;
+}
+
+.section-end {
+  @extend %position_relative;
+  height: 5em;
+
+  .left-bar {
+    @extend %position_absolute;
+    width: 0.7em;
+    height: 80%;
+    top: 0px;
+    left: 0px;
+    background-color: map-get($color-block, blue);
+  }
+
+  &:after {
+    @extend %position_absolute;
+    @include traingle-right(map-get($color-block, blue), 1em);
+    content: '';
+    left: -0.6em;
+    bottom: 1em;
+    transform: rotateZ(45deg);
+  }
+}
+
+.guide-box {
+  position: relative;
+  height: 10px;
+  margin-top: 4em;
+  &:before {
+    @include animation(box-jump .8s infinite);
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: map-get($color-block, red-pink);
+    border-radius: 2px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &:after {
+    @include animation(shadow 0.8s infinite);
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 100px;
+    width: 50px;
+    height: 3px;
+    background-color: #eaeaea;
+    transform: translateX(-50%);
+    border-radius: 100%;
+  }
+}
+
+@include keyframes(box-jump) {
+	0% {
+		top: 10px;
+		transform: translateX(-50%) rotate(90deg);
+	}
+	20%,
+	80% {
+		border-radius: 2px;
+	}
+	50% {
+		top: 50px;
+		transform: translateX(-50%) rotate(45deg);
+		border-bottom-right-radius: 25px;
+	}
+	100% {
+		top: 10px;
+		transform: translateX(-50%) rotate(0deg);
 	}
 }
 
-#theMosquitoMan{
-	background: white url(../img/theMosquitoMan.png) center;
-	background-size: cover;		
+@include keyframes(shadow) {
+  from,
+  to {
+    width: 50px;
+    background-color: #eaeaea;
+  }
+  50% {
+    width: 70px;
+    height: 7px;
+    top: 98px;
+    background-color: #eee;
+  }
 }
-
-#theMosquitoMan_game{
-	background: white url(../img/game.png) center;
-	background-size: cover;		
-}
-
-#slotMachine{
-	background: white url(../img/slotMachine.png) center;
-	background-size: cover;			
-}
-
-#proj-1999{
-	background: white url(../img/visualization_demo.png) center;
-	background-size: cover;				
-}
-
-.section-end{
-	@extend %position_relative;
-	height: 5em;
-
-	.left-bar{
-		@extend %position_absolute;
-		width: .7em;
-		height: 80%;
-		top: 0px;
-		left: 0px;
-		background-color: map-get($color-block, blue)
-	}
-
-	&:after{
-		@extend %position_absolute;
-		@include traingle-right(map-get($color-block, blue), 1em);
-		content: '';
-		left: -.6em;
-		bottom: 1em;
-		transform: rotateZ(45deg);
-
-	}
-}
-
 
 /*
  * break-point
  */
-@media (min-width: map-get($break-point, table-l) ){	
-	.pojoro-box{
-	  width: 15em;
-	  height: 15em;
-	  transform: translateY(-50%);
-	}
+@media (min-width: map-get($break-point, table-l)) {
+  .part-img-box {
+    .part-img {
+      width: 40%;
+      margin-top: 1em;
+    }
+  }
 
-	.part-img-box{
-		.part-img{
-			width: 40%;
-			margin-top: 1em;
-		}
-	}
+  .part-event {
+    margin-left: 3em;
 
-	.part-event{
-		margin-left: 3em;
-
-		img{
-			width: 70%;
-		}
-	}
+    img {
+      width: 70%;
+    }
+  }
+}
+@media (min-width: map-get($break-point, table-l)) {
+  .wrap {
+    margin-top: 10em;
+  }
+}
+@media (min-width: map-get($break-point, screen-s)) {
+  .wrap {
+    margin-top: 12em;
+    h3 {
+      padding-top: 2em;
+    }
+  }
 }
 
-@media (min-width: map-get($break-point, screen-s)){
-	.wrap{
-		h3{
-			padding-top: 14em;
-		}
-	}
-}
-
-@media (min-width: map-get($break-point, screen-xl)){
-	.wrap{
-		h3{
-			padding-top: 20em;
-		}
-	}
+@media (min-width: map-get($break-point, screen-xl)) {
+  .wrap {
+    margin-top: 15em;
+    h3 {
+      padding-top: 3em;
+    }
+  }
 }

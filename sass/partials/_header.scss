@@ -1,13 +1,28 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1em;
+  color: map-get($color-basic, gray-dark);
+
+  h3 {
+    padding: 0px 1em;
+    border-right: solid 1px;
+    border-left: solid 1px;
+    font-weight: 400;
+  }
+}
+
 .menu {
-  @extend %position_relative;
+  display: none;
+  color: map-get($color-basic, gray-dark);
+  font-size: 0.8em;
+  margin-bottom: 3em;
   z-index: 1000;
   width: 80%;
   left: 10%;
   top: 3em;
-  margin-bottom:3em;
-  font-size: .8em;
-  color: map-get($color-basic, gray-dark);
-  
   > ul {
     width: 100%;
     display: flex;
@@ -20,7 +35,7 @@
     border-left: solid 1px;
     border-right: solid 1px;
     width: 16.6%;
-    padding: 0px .3em;
+    padding: 0px 0.3em;
     text-align: center;
     letter-spacing: 4px;
     line-height: 1em;
@@ -31,8 +46,8 @@
       border-right: solid 2px;
     }
 
-    &:after{
-      @include transition(all .2s linear);
+    &:after {
+      @include transition(all 0.2s linear);
       content: '';
       position: absolute;
       width: 50%;
@@ -44,18 +59,124 @@
       opacity: 0;
     }
 
-    &:hover{
+    &:hover {
       color: map-get($color-basic, black-hard);
 
-      &:after{
+      &:after {
+        bottom: -0.5em;
         opacity: 1;
-        bottom: -.5em;
       }
     }
   }
+}
 
-  @media (min-width: map-get($break-point, table-l)){
+.menu-mobile {
+  position: fixed;
+  top: 0px;
+  max-height: $nav-max-height;
+  margin-top: 0px;
+  padding: 0 10%;
+  width: 80%;
+  box-shadow: 0 1px 4px 0px rgba(128, 128, 128, 0.25);
+  background-color: white;
+  justify-content: space-between;
+
+  z-index: 100;
+
+  p {
+    padding: 0 1em;
+    font-size: 0.8em;
+    letter-spacing: 0;
+  }
+}
+
+.menu-lists-block {
+  @include transition(all 0.2s ease-in);
+  position: fixed;
+  width: 80vw;
+  height: 100vh;
+  background-color: #f9e959;
+  z-index: 101;
+  top: 0;
+  right: -100vw;
+  overflow-y: scroll;
+
+  .toggle-close {
+    @include transition(all .2s linear);
     position: absolute;
+    right: 2em;
+    top: 1em;
+    font-size: 1.3em;
+    z-index: 102;
+    &:hover {
+      color: white;
+      @include transform(rotateZ(180deg) scale(1.5));
+    }
+  }
+
+  &:target {
+    right: 0;
+  }
+
+  > .menu-link {
+    &:nth-child(2) {
+      margin-top: 3em;
+    }
+  }
+}
+
+.menu-lists-applications {
+  @include transition(all .2s ease-in);
+  height: 0;
+  overflow-y: hidden;
+
+  &.open {
+    height: 40em;
+    padding-left: 3em;
+  }
+}
+
+.menu-link {
+  @include transform(skewX(-6deg) skewY(-6deg));
+  @include transition(all .1s linear);
+  width: 16em;
+  margin: 1.2em 2em 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+
+  > h3 {
+    margin: 1em 0 0;
+    font-size: 1.5em;
+  }
+
+  > p {
+    margin: 0;
+  }
+}
+
+.fa-caret-down {
+  transition: transform .2s linear;
+  &.rotate-to-up {
+    @include transform(rotateZ(180deg));    
+  }
+}
+
+@media (min-width: map-get($break-point, table-l)) {
+  .menu-mobile {
+    display: none;
+  }
+  .menu {
+    display: block;
     font-size: 1em;
+    position: absolute;
+  }
+
+  .section {
+    &.section-start {
+      margin-top: 0;
+    }
   }
 }

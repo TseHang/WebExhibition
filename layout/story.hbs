@@ -9,13 +9,9 @@
   <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
 </head>
 <body>
-
+	{{> header}}
 	<header>
-		<div class="header-content">
-			<h1>${header.title}</h1>
-			<p class="p-font-400">${header.subTitle}</p>
-			<a href="index.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
-		</div>
+		{{> block-header}}
 	</header>
 
 	<nav>
@@ -91,9 +87,7 @@
 	</section>
 
 	{{> gogoGuide}}
-	<footer class="footer">
-		{{> block-footer}}
-	</footer>
+	{{> footer}}
 
 
 </body>

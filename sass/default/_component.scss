@@ -29,6 +29,14 @@
 	letter-spacing: map-get($letter-spacing, m);
 }
 
+.link {
+	cursor: pointer;
+	text-decoration: underline;
+	&:hover {
+		opacity: .6;
+	}
+}
+
 
 /*
  *	module

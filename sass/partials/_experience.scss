@@ -1,110 +1,162 @@
-.gogoGuide{
-	display: none;
+.gogoGuide {
+  display: none;
 }
 
-@media (min-width: map-get($break-point, table-l)){
-	.gogoGuide{
-		@include transition(all .6s ease-in);
-		@include animation(experienceShow 0.7s linear);
-		display: none;
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    @include transition(all 0.6s ease-in);
+    @include animation(experienceShow 0.7s linear);
+    display: none;
     position: fixed;
     right: -2em;
     top: -3em;
     width: 10em;
 
-    .experienceTalk{
-    	@include border-radius(5px);
-    	position: relative;
-			margin: 3em 0px 0px 0px;
-			opacity: 0;
-	    padding: .2em;
-	    font-size: .8em;
-	    color: white;
-	    background-color: rgba(128, 128, 128, .65);
+    .experience-talk {
+      @include border-radius(5px);
+      position: relative;
+      margin: 3em 0px 0px 0px;
+      opacity: 0;
+      padding: 0.2em;
+      font-size: 0.8em;
+      color: white;
+      background-color: rgba(128, 128, 128, 0.65);
 
-			&:before,{
-				@include traingle-left(rgba(128, 128, 128, 1), 1em);
-				content: '';
-				position: absolute;
-				top: -.9em;
-				left: 50%;
-				transform: translateX(-50%) rotateZ(45deg);
-
-			}
+      &:before {
+        @include traingle-left(rgba(128, 128, 128, 1), 1em);
+        content: '';
+        position: absolute;
+        top: -0.9em;
+        left: 50%;
+        transform: translateX(-50%) rotateZ(45deg);
+      }
     }
 
-    .experience-close{
-	    position: absolute;
-	    display: none;
-	    left: 50%;
-	    top: 50%;
-	    font-size: 1.8em;
-	    cursor: pointer;
-	    z-index: -1;
-	    &:hover{
-	    	opacity: .4;
-	    }
+    .fa-icon {
+      position: absolute;
+      display: none;
+      left: 50%;
+      top: 50%;
+      font-size: 1.8em;
+      cursor: pointer;
+      z-index: -1;
+      &:hover {
+        opacity: .6;
+      }
     }
 
-    &.hover{
-    	right: 2em;
-    	> #experience{
-				transform: scale(1);
-    	}
+    &.hover {
+      right: 2em;
+      > #experience {
+        transform: scale(1);
+      }
 
-    	.experienceTalk{
-    		opacity: 1;
-    	}
+      .experience-talk {
+        opacity: 1;
+      }
     }
 
-    &:hover{
-    	right: 2em;
-    	> #experience{
-				transform: scale(1);
-    	}
+    &:hover {
+      right: 2em;
+      > #experience {
+        transform: scale(1);
+      }
 
-    	.experienceTalk{
-    		opacity: 1;
-    	}
+      .experience-talk {
+        opacity: 1;
+      }
     }
 
-    &.drag{
-    	@include transition(none);
+    &.drag {
+      @include transition(none);
 
-    	> #experience{
-    		&:before, &:after{
-					@include animation-duration(.3s !important);
-				}
-    	}
+      > #experience {
+        &:before,
+        &:after {
+          @include animation-duration(0.3s !important);
+        }
+      }
     }
 
-    &.close-show{
-    	.experience-close{
-    		@include animation(close-show .3s linear forwards);
-    		display: block;
-    		z-index: 2;
-    	}
+    &.icon-show {
+      .fa-icon {
+        display: block;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, .8);
+        box-shadow: white 0 0 35px 10px;
+      }
+      
+      .experience-icon-home {
+        @include animation(home-show .4s linear forwards);
+      }
+      .experience-icon-lists {
+        font-size: 1.5em;
+        @include animation(lists-show .4s linear forwards);
+      }
+      .experience-icon-close {
+        @include animation(close-show .5s linear forwards);
+      }
     }
-	}
+  }
 
-	#experience{
-		@include transition(transform .3s ease-in);
-		cursor: move;
-		transform: scale(.6);
-		&:before, &:after{
-			@include animation-duration(.7s);
-			display: block;
-		}
-	}
+  #experience {
+    @include transition(transform 0.3s ease-in);
+    cursor: move;
+    transform: scale(0.6);
+    &:before,
+    &:after {
+      @include animation-duration(0.7s);
+      display: block;
+    }
+  }
 }
 
-@include keyframes(close-show){
-	from{
-		top: 50%;
-		transform: translateX(-50%) translateY(-50%) scale(.1);
-	}
-	to{
-		top: 30%;
-		transform: translateX(-50%) translateY(-50%) scale(1);
-	}
+@include keyframes(home-show) {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+  }
+  60% {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  to {
+    top: 20%;
+    left: 50%;
+    transform-origin: 50% 100px;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotateZ(-30deg);
+  }
+}
+
+@include keyframes(lists-show) {
+  from {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+  }
+  60% {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
+  to {
+    top: 20%;
+    left: 50%;
+    transform-origin: 50% 100px;
+    transform: translateX(-50%) translateY(-50%) scale(1) rotateZ(30deg);
+  }
+}
+
+
+@include keyframes(close-show) {
+  from {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.1);
+  }
+  60%, 100% {
+    top: 20%;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+  }
 }

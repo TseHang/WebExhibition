@@ -23,25 +23,25 @@
 		  
 		  if( scrollVal < errorDistance){
 				$('.gogoGuide').addClass('hover');
-				// $('.experienceTalk').html('我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊');
+				// $('.experience-talk').html('我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊');
 
 				window.setTimeout(function(){
 					$('.gogoGuide').removeClass('hover');
 				},2000);
 
 		  }else if(scrollVal > errorDistance){
-		  	$('.experienceTalk').html('「Review2015」<br>「幸福的定義」<br>這系列已經榮獲我最愛作品的前三名 <3');
+		  	$('.experience-talk').html('「Review2015」<br>「幸福的定義」<br>這系列已經榮獲我最愛作品的前三名 <3');
 		  }
 		});
 
 		$('#section-review2015').mouseover(function(){
 			$('.gogoGuide').addClass('hover');
-			$('.experienceTalk').html('我們的第一個作品，雖然不是很完美，但卻是2015年很重要的議題喔！ ><');
+			$('.experience-talk').html('我們的第一個作品，雖然不是很完美，但卻是2015年很重要的議題喔！ ><');
 		})
 
 		$('#section-happiness').mouseover(function(){
 			$('.gogoGuide').addClass('hover');
-			$('.experienceTalk').html('幸福是什麼呢？好深奧的問題啊...我都快被搞混了＠＠＠');
+			$('.experience-talk').html('幸福是什麼呢？好深奧的問題啊...我都快被搞混了＠＠＠');
 		})
 
 		$('.section-board').mouseout(function(){

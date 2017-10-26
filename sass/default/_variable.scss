@@ -40,6 +40,10 @@ $color-block:(
 $color-default--bg: map-get($color-basic, white);
 $color-board-major:	map-get($color-basic, blue);
 
+// Nav-menu
+$nav-max-height: 3em;
+
+
 /*
  *	Font
  */

@@ -7,98 +7,105 @@
 
 $main-color: map-get($color-block, yellow-earthy);
 
-header{
-	@extend %position_relative;
-	background: transparent url(../img/visualization.png) ;
+header {
+  @extend %position_relative;
+  background: transparent url(../img/visualization.png);
   background-size: cover;
 }
 
-.header-content{
-	background-color: rgba(231, 183, 136, .95);
+.header-content {
+  background-color: rgba(231, 183, 136, 0.95);
 
-	&:hover{
-		background-color: rgba(231, 183, 136, .85);
-	}
+  &:hover {
+    background-color: rgba(231, 183, 136, 0.85);
+  }
 }
 
-.footer{
-	background-color: $main-color;
+.footer {
+  background-color: $main-color;
 }
 
-.contact{
-	padding-top: 1em;
-	text-align: center;
+.contact {
+  padding-top: 1em;
+  text-align: center;
 }
 
-.section-title{
-	h1{
-		&:after{
-			background-color: $main-color;
-		}
-	}
+.section-title {
+  h1 {
+    &:after {
+      background-color: $main-color;
+    }
+  }
 }
 
-.section-board{
-	&:before{
-		border-color: $main-color transparent transparent $main-color;
-	}
-	
-	&:after{
-		border-color: transparent $main-color $main-color transparent ;
-	}
-	
-	.circle{
-		border-color: $main-color;
-	}
+.section-board {
+  &:before {
+    border-color: $main-color transparent transparent $main-color;
+  }
 
-	.board-img{
-		background: url(../img/visualization_demo.png) no-repeat ;
-		background-size: cover;
-	}
+  &:after {
+    border-color: transparent $main-color $main-color transparent;
+  }
+
+  .circle {
+    border-color: $main-color;
+  }
+
+  .board-img {
+    background: url(../img/visualization_demo.png) no-repeat;
+    background-size: cover;
+  }
 }
+
+#footer {
+  background-color: $main-color;
+}
+
 
 /*
  * pojoro
- */ 
-@media (min-width: map-get($break-point, table-l)){
-	.gogoGuide{
-		.experience-close{
-			color: $main-color;
-		}
-	}
-	
-	#experience{
-		box-shadow:0 0 0 0.2em rgba(226, 131, 38, 0.85), 
-					0 0 0.1em 0.55em rgba(220, 143, 67, 0.75), 
-					inset 0 0.2em 0 0 rgb(134, 98, 63);
+ */
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    .fa-icon {
+      color: $main-color;
+    }
+  }
 
-		@include animation( eye-visualization 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
-	}
+  #experience {
+    box-shadow: 0 0 0 0.2em rgba(226, 131, 38, 0.85),
+      0 0 0.1em 0.55em rgba(220, 143, 67, 0.75),
+      inset 0 0.2em 0 0 rgb(134, 98, 63);
 
-	@include keyframes(eye-visualization)  {
+    @include animation( eye-visualization 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
+  }
 
-		/* Eye movement */
-		
-		5%, 10%  {
-			line-height: 1.2em;
-			padding-left: 0em;
-		}
-		15%, 20%  {
-			line-height: 1.15em;
-			padding-left: 0.4em;
-		}
-		
-		/* Eyelash movement */
-		
-		25%  {
-			box-shadow:0 0 0 0.2em rgba(226, 131, 38, 0.85), 
-					0 0 0.1em 0.55em rgba(210, 143, 57, 0.75), 
-					inset 0 0.2em 0 0 rgb(134, 98, 63);
-		}
-		23%, 27%  {
-			box-shadow:0 0 0 0.2em rgba(226, 131, 38, 0.85), 
-					0 0 0.1em 0.55em rgba(210, 143, 57, 0.75), 
-					inset 0 0.2em 0 0 rgb(134, 98, 63);
-		}
-	}
+  @include keyframes(eye-visualization) {
+    /* Eye movement */
+
+    5%,
+    10% {
+      line-height: 1.2em;
+      padding-left: 0em;
+    }
+    15%,
+    20% {
+      line-height: 1.15em;
+      padding-left: 0.4em;
+    }
+
+    /* Eyelash movement */
+
+    25% {
+      box-shadow: 0 0 0 0.2em rgba(226, 131, 38, 0.85),
+        0 0 0.1em 0.55em rgba(210, 143, 57, 0.75),
+        inset 0 0.2em 0 0 rgb(134, 98, 63);
+    }
+    23%,
+    27% {
+      box-shadow: 0 0 0 0.2em rgba(226, 131, 38, 0.85),
+        0 0 0.1em 0.55em rgba(210, 143, 57, 0.75),
+        inset 0 0.2em 0 0 rgb(134, 98, 63);
+    }
+  }
 }

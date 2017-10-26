@@ -7,98 +7,95 @@
 
 $main-color: map-get($color-block, green);
 
-header{
-	@extend %position_relative;
-	background: white url(../img/logo.svg) space;
+header {
+  @extend %position_relative;
+  background: white url(../img/logo.svg) space;
   background-size: contain;
 }
 
-.header-content{
-	background-color: rgba(2, 184, 117, .95);
+.header-content {
+  background-color: rgba(2, 184, 117, 0.95);
 
-	&:hover{
-		background-color: rgba(2, 184, 117, .85)
-	}
+  &:hover {
+    background-color: rgba(2, 184, 117, 0.85);
+  }
 }
 
-.footer{
-	background-color: $main-color;
+.section-title {
+  h1 {
+    &:after {
+      background-color: $main-color;
+    }
+  }
 }
 
-.contact{
-	padding-top: 1em;
-	text-align: center;
+.section-board {
+  &:before {
+    border-color: $main-color transparent transparent $main-color;
+  }
+
+  &:after {
+    border-color: transparent $main-color $main-color transparent;
+  }
+
+  .circle {
+    border-color: $main-color;
+  }
+
+  .board-img {
+    background: url(../img/theMosquitoMan.png) no-repeat;
+    background-size: cover;
+  }
 }
 
-.section-title{
-	h1{
-		&:after{
-			background-color: $main-color;
-		}
-	}
-}
-
-.section-board{
-	&:before{
-		border-color: $main-color transparent transparent $main-color;
-	}
-	
-	&:after{
-		border-color: transparent $main-color $main-color transparent ;
-	}
-	
-	.circle{
-		border-color: $main-color;
-	}
-
-	.board-img{
-		background: url(../img/theMosquitoMan.png) no-repeat ;
-		background-size: cover;
-	}
+#footer {
+  background-color: $main-color;
 }
 
 /*
  * pojoro
- */ 
-@media (min-width: map-get($break-point, table-l)){
-	.gogoGuide{
-		.experience-close{
-			color: $main-color;
-		}
-	}
-	
-	#experience{
-		box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
-					0 0 0.1em 0.55em rgba(29, 128, 91, 0.95), 
-					inset 0 0.2em 0 0 rgb(1, 107, 68);
+ */
+@media (min-width: map-get($break-point, table-l)) {
+  .gogoGuide {
+    .fa-icon {
+      color: $main-color;
+    }
+  }
 
-		@include animation(eye-issue 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
-	}
+  #experience {
+    box-shadow: 0 0 0 0.2em rgb(31, 146, 104),
+      0 0 0.1em 0.55em rgba(29, 128, 91, 0.95),
+      inset 0 0.2em 0 0 rgb(1, 107, 68);
 
-	@include keyframes(eye-issue)  {
+    @include animation(eye-issue 2.2s ease-in-out infinite, pojoro-body 1.15s 1.8s linear infinite);
+  }
 
-		/* Eye movement */
-		
-		5%, 10%  {
-			line-height: 1.2em;
-			padding-left: 0em;
-		}
-		15%, 20%  {
-			line-height: 1.15em;
-			padding-left: 0.4em;
-		}
-		
-		/* Eyelash movement */
-		
-		25%  {
-			box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
-					0 0 0.1em 0.55em rgba(19, 128, 81, 0.95), 
-					inset 0 0.2em 0 0 rgb(1, 107, 68);
-		}
-		23%, 27%  {
-			box-shadow:0 0 0 0.2em rgb(31, 146, 104), 
-					0 0 0.1em 0.55em rgba(19, 128, 81, 0.95), 
-					inset 0 0.2em 0 0 rgb(1, 107, 68);
-		}
-	}
+  @include keyframes(eye-issue) {
+    /* Eye movement */
+
+    5%,
+    10% {
+      line-height: 1.2em;
+      padding-left: 0em;
+    }
+    15%,
+    20% {
+      line-height: 1.15em;
+      padding-left: 0.4em;
+    }
+
+    /* Eyelash movement */
+
+    25% {
+      box-shadow: 0 0 0 0.2em rgb(31, 146, 104),
+        0 0 0.1em 0.55em rgba(19, 128, 81, 0.95),
+        inset 0 0.2em 0 0 rgb(1, 107, 68);
+    }
+    23%,
+    27% {
+      box-shadow: 0 0 0 0.2em rgb(31, 146, 104),
+        0 0 0.1em 0.55em rgba(19, 128, 81, 0.95),
+        inset 0 0.2em 0 0 rgb(1, 107, 68);
+    }
+  }
 }

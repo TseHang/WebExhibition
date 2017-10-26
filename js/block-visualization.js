@@ -30,13 +30,13 @@
 				},2000);
 
 		  }else if(scrollVal > errorDistance){
-		  	$('.experienceTalk').html('「1999視覺化」<br>這是我們團隊第一次合做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的圖表意義。');
+		  	$('.experience-talk').html('「1999視覺化」<br>這是我們團隊第一次合做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的圖表意義。');
 		  }
 		});
 
 		$('.section-board').mouseover(function(){
 			$('.gogoGuide').addClass('hover');
-			$('.experienceTalk').html('哇～～要點開了嗎...好緊張...😀');
+			$('.experience-talk').html('哇～～要點開了嗎...好緊張...😀');
 		})
 
 		$('.section-board').mouseout(function(){

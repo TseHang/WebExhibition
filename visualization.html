@@ -1,1 +1,84 @@
-<html style="height:100%;width:100%;margin:0"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="WebExhibition" content="yes"><link href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css"><title>WebExhibition - 視覺化圖表</title><link rel="stylesheet" href="./dist/css/visualization.css"><script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script></head><body><header><div class="header-content"><h1>${header.title}</h1><p class="p-font-400">${header.subTitle}</p><a href="index.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a></div></header><nav><h3>台南市政府1999派工案件</h3></nav><section><div class="section-title"><h1 class="col-xs-6 col-md-2 col-md-offset-1">目標問題</h1></div><div class="row"><div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3"><p>台南市民服務專線1999擁有許多人民陳情、派工案件的事件資料，這次我們團隊很榮幸受邀來幫他們製作一系列的視覺化圖表，<span class="color-blue">清楚把這些數據背後呈現的意義表達出來。</span></p></div></div><div class="section-title"><h1 class="col-xs-6 col-md-2 col-md-offset-1">如何思考</h1></div><div class="row"><div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3"><ul><li>選對議題是一個很重要的關鍵</li><li>定義此網站的核心<span class="color-blue">「簡潔、易用、統計」</span></li><li><span class="color-blue">三個想傳達的訊息</span><br>我家旁邊都有什麼案件發生呢？<br>台南市這一星期到底都發生了什麼？<br>若是從時間軸綜觀 看，派工案件發生的次數是如何變化？</li></ul></div></div><div class="section-title"><h1 class="col-xs-6 col-md-2 col-md-offset-1">專案成果</h1></div><div class="row"><div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2"><div id="board-slotMachine" class="board-img" onclick='window.open("http://1999.instants.io/#overview")'></div><div class="board-content"><h2>台南市政府1999</h2><p class="color-yellow-earthy">視覺化圖表分析</p><br><div class="link"><a href="http://1999.instants.io/#overview" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a></div></div><div class="circle"></div></div></div></section><div class="gogoGuide" id="gogoGuide"><div id="experience" class="pojoro">●</div><p class="experienceTalk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p><div class="experience-close"><a><i class="fa fa-times-circle-o" aria-hidden="true"></i></a></div></div><footer class="footer"><div class="contact"><a href="mailto:a54383813@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a><a href="https://www.facebook.com/mengzeh" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="https://github.com/TseHang/WebExhibition" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div><ul><li class="list"><a href="index.html"><em>首頁</em></a></li><li class="list"><a href="3dvr.html"><em>3D ＆ VR</em></a></li><li class="list"><a href="issue.html"><em>深度議題</em></a></li><li class="list"><a href="simple-app.html"><em>有趣小應用</em></a></li><li class="list"><a href="visualization.html"><em>視覺化圖表</em></a></li><li class="list"><a href="story.html"><em>報導故事書</em></a></li><li class="list"><a href="game.html"><em>遊戲</em></a></li></ul></footer><link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"><script src="https://code.jquery.com/jquery-1.7.2.min.js"></script><script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script><script src="src/jquery.ui.touch-punch.min.js"></script><script src="./dist/js/gogoGuide.js"></script><script type="text/javascript" src="dist/js/block-visualization.js"></script><script type="text/javascript">$(".gogoGuide").addClass("hover"),window.setTimeout(function(){$(".gogoGuide").removeClass("hover")},2e3)</script></body></html>
+<html style="height:100%;width:100%;margin:0px;"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="WebExhibition" content="yes"><link href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!-- flexboxgrid --><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+  <title> WebExhibition - 視覺化圖表</title>
+  <link rel="stylesheet" href="./dist/css/visualization.css">
+  <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+</head>
+<body>
+	<nav class="menu"><ul><li class="list"><a href="3dvr.html"><em>3D ＆ VR</em></a></li><li class="list"><a href="issue.html"><em>深度議題</em></a></li><li class="list"><a href="simple-app.html"><em>有趣小應用</em></a></li><li class="list"><a href="visualization.html"><em>視覺化圖表</em></a></li><li class="list"><a href="story.html"><em>報導故事書</em></a></li><li class="list"><a href="game.html"><em>遊戲</em></a></li></ul></nav><!-- 自己設計一個 mobile-menu 當 nav-bar--><nav class="menu-mobile"><div id="experience" class="pojoro nav"> ● </div><p class="nav-main-text">嗨，我叫 艾克斯・貝利恩斯，要來玩玩嘛？</p><a href="#menu-lists"><i class="fa fa-bars" aria-hidden="true"></i></a></nav><div id="menu-lists" class="menu-lists-block"><div class="toggle-close"><a href="#experience"><i class="fa fa-times" aria-hidden="true"></i></a></div><a class="menu-link" href="/"><h3>起源</h3><p> - Experience 的反思之路</p></a><a class="menu-link" href="/impact.html"><h3>影響</h3><p> - Experience 的延續影響</p></a><a class="menu-link" id="fa-lists-applications"><h3>應用</h3><p> - Experience 的小小體悟</p><i class="fa fa-caret-down" aria-hidden="true"></i></a><div class="menu-lists-applications"><a class="menu-link" href="/3dvr.html"><h3>3D &amp; VR</h3><p> - 簡易手機 VR 體驗</p></a><a class="menu-link" href="/issue.html"><h3>深度議題</h3><p> - 掌蚊人</p></a><a class="menu-link" href="/simple-app.html"><h3>有趣小應用</h3><p> - 抽獎機、即時回饋</p></a><a class="menu-link" href="/visualization.html"><h3>視覺化圖表</h3><p> - 台南市 1999 統計資訊</p></a><a class="menu-link" href="story.html"><h3>報導 ＆ 故事書 </h3><p> - &lt;&nbsp;幸福的定義&nbsp;&gt; 網頁故事書</p></a><a class="menu-link" href="game.html"><h3>遊戲</h3><p> - 掌蚊宗師</p></a></div></div>	<header>
+		<div class="header-content" onclick="window.location='index.html'">    <h1>${header.title}</h1>    <p class="p-font-400">${header.subTitle}</p>    <a class="icon-back" href="index.html">        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>    </a></div>	</header>
+
+	<nav>
+		<h3>台南市政府1999派工案件</h3>
+	</nav>
+
+	<section>
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">目標問題</h1>
+		</div>
+
+		<div class="row">
+			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
+				<p>台南市民服務專線1999擁有許多人民陳情、派工案件的事件資料，這次我們團隊很榮幸受邀來幫他們製作一系列的視覺化圖表，<span class="color-blue">清楚把這些數據背後呈現的意義表達出來。</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">如何思考</h1>
+		</div>
+		
+		<div class="row">
+			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
+				<ul>
+					<li>選對議題是一個很重要的關鍵</li>
+
+					<li>定義此網站的核心<span class="color-blue">「簡潔、易用、統計」</span></li>
+
+					<li><span class="color-blue">三個想傳達的訊息</span>
+						<br>
+					我家旁邊都有什麼案件發生呢？
+						<br>
+					台南市這一星期到底都發生了什麼？
+						<br>
+					若是從時間軸綜觀 看，派工案件發生的次數是如何變化？
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="section-title">
+			<h1 class="col-xs-6 col-md-2 col-md-offset-1">專案成果</h1>
+		</div>
+
+		<div class="row">
+			<div class="section-board col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+				<div id="board-slotMachine" class="board-img" onclick="window.open('http://1999.instants.io/');"></div>
+				<div class="board-content">
+					<h2>台南市政府1999</h2>
+					<p class="color-yellow-earthy">視覺化圖表分析</p>
+					<br>
+					<div class="link">
+						<a href="http://1999.instants.io/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				<div class="circle"></div>
+			</div>
+		</div>
+
+	</section>
+
+	<div class="gogoGuide" id="gogoGuide"><div id="experience" class="pojoro"> ● </div><p class="experience-talk">我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊</p><div class="experience-icon-home fa-icon"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a></div><div class="experience-icon-close fa-icon"><a><i class="fa fa-times-circle-o" aria-hidden="true"></i></a></div><div class="experience-icon-lists fa-icon"><a><i class="fa fa-bars" aria-hidden="true"></i></a></div></div>	<footer id="footer" class="row"><div class="col-xs-12 col-md-3 col-md-offset-1 footer-block"><a href="mailto:a54383813@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a><a href="https://www.facebook.com/mengzeh" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="https://github.com/TseHang/WebExhibition" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div><div class="col-xs-12 col-md-3 col-md-offset-3 footer-block"><p><i class="fa fa-copyright"></i>Copyright 2017 Meng-Tse, Hang</p></div></footer>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script><script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script><script src="src/jquery.ui.touch-punch.min.js"></script><script src="./dist/js/gogoGuide.js"></script><script type="text/javascript" src="dist/js/block-visualization.js"></script>
+
+<script type="text/javascript">
+	$('.gogoGuide').addClass('hover');	
+
+	window.setTimeout(function(){
+		$('.gogoGuide').removeClass('hover');
+	},2000);
+</script>
+
+</body><!-- jquery-ui css --></html>

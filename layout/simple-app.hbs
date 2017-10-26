@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 
-<html style = "height:100%;width:100%;margin:0px;">
+<html style="height:100%;width:100%;margin:0px;">
+
 <head>
-  {{> head}}
+	{{> head}}
 
-  <title> WebExhibition - {{title}}</title>
-  <link rel="stylesheet" href = "./dist/css/simple-app.css">
-  <script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+	<title> WebExhibition - {{title}}</title>
+	<link rel="stylesheet" href="./dist/css/simple-app.css">
+	<script type="text/javascript" src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
 </head>
-<body>
 
+<body>
+	{{> header}}
 	<header>
-		<div class="header-content">
-			<h1>${header.title}</h1>
-			<p class="p-font-400">${header.subTitle}</p>
-			<a href="index.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
-		</div>
+		{{> block-header}}
 	</header>
 
 	<nav>
@@ -30,14 +28,14 @@
 
 		<div class="row">
 			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
-				<p><span class="color-blue p-font-400">舉例：抽獎。</span>
-					<br>
-				抽籤屬於網路上很基本功能的小程式，但卻因為功能簡單所以普遍上往往完成功能，卻忘了「抽獎」這動作應該要給使用者帶來愉悅的「體驗」。
+				<p>
+					<span class="color-blue p-font-400">舉例：抽獎。</span>
+					<br> 抽籤屬於網路上很基本功能的小程式，但卻因為功能簡單所以普遍上往往完成功能，卻忘了「抽獎」這動作應該要給使用者帶來愉悅的「體驗」。
 				</p>
 
-				<p><span class="color-blue p-font-400">舉例：即時問卷系統</span>
-					<br>
-				以往都是用紙本問卷當作回饋表單，若是想知道回饋結果只能乾等一兩個工作天。我開始思考，能否使用電子表單改善此現象，並呈現即時回饋與分析？
+				<p>
+					<span class="color-blue p-font-400">舉例：即時問卷系統</span>
+					<br> 以往都是用紙本問卷當作回饋表單，若是想知道回饋結果只能乾等一兩個工作天。我開始思考，能否使用電子表單改善此現象，並呈現即時回饋與分析？
 				</p>
 			</div>
 		</div>
@@ -45,7 +43,7 @@
 		<div class="section-title">
 			<h1 class="col-xs-6 col-md-2 col-md-offset-1">如何思考</h1>
 		</div>
-		
+
 		<div class="row">
 			<div class="section-content col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
 				<ul>
@@ -72,8 +70,12 @@
 					<p class="color-red-pink">全新體驗的抽獎效果</p>
 					<br>
 					<div class="link">
-						<a href="https://ncku-ccs.github.io/slotMachine/slot_machine.html" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
-						<a href="https://github.com/NCKU-CCS/slotMachine" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+						<a href="https://ncku-ccs.github.io/slotMachine/slot_machine.html" target="_blank">
+							<i class="fa fa-eye" aria-hidden="true"></i>
+						</a>
+						<a href="https://github.com/NCKU-CCS/slotMachine" target="_blank">
+							<i class="fa fa-github" aria-hidden="true"></i>
+						</a>
 					</div>
 				</div>
 				<div class="circle"></div>
@@ -88,8 +90,12 @@
 					<p class="color-red-pink">立即回饋分析的有趣問卷系統</p>
 					<br>
 					<div class="link">
-						<a href="https://tsehang.github.io/d3ForceSimple/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>
-						<a href="https://github.com/TseHang/d3ForceSimple" target="_blank" ><i class="fa fa-github" aria-hidden="true"></i></a>
+						<a href="https://tsehang.github.io/d3ForceSimple/" target="_blank">
+							<i class="fa fa-eye" aria-hidden="true"></i>
+						</a>
+						<a href="https://github.com/TseHang/d3ForceSimple" target="_blank">
+							<i class="fa fa-github" aria-hidden="true"></i>
+						</a>
 					</div>
 				</div>
 				<div class="circle"></div>
@@ -99,9 +105,8 @@
 	</section>
 
 	{{> gogoGuide}}
-	<footer class="footer">
-		{{> block-footer}}
-	</footer>
+	{{> footer}}
+
 
 
 </body>
@@ -110,11 +115,11 @@
 <script type="text/javascript" src="dist/js/block-simple-app.js"></script>
 
 <script type="text/javascript">
-	$('.gogoGuide').addClass('hover');	
+	$('.gogoGuide').addClass('hover');
 
-	window.setTimeout(function(){
+	window.setTimeout(function () {
 		$('.gogoGuide').removeClass('hover');
-	},2000);
+	}, 2000);
 </script>
 
 
