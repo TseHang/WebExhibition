@@ -1,5 +1,6 @@
 ;(() => {
   const windowWidth = $(window).width()
+  const BREAKPOINT_MOBILE = 768
   const errorDistance = 150
 
   const data = {
@@ -17,7 +18,7 @@
     },
   })
 
-  if (windowWidth >= 768) {
+  if (windowWidth >= BREAKPOINT_MOBILE) {
     $(window).scroll(function () {
       const scrollVal = $(this).scrollTop()
 
@@ -40,5 +41,21 @@
     $('.section-board').mouseout(() => {
       $('.gogoGuide').removeClass('hover')
     })
+  } else {
+    $(window).scroll(function () {
+      const scrollVal = $(this).scrollTop()
+      const sectionContent = $('.section-content').offset().top
+
+      if (scrollVal <= sectionContent) {
+        setMobileMenuText('嗨，我叫艾克斯・貝利恩斯，要來玩玩嘛？', '會開始做視覺化圖表的起因都是因為我們進入了一個很酷很酷的團隊 -- 「用數據看台灣」！你有在關注我們嗎？XD')
+      } else {
+        setMobileMenuText('這是第一個自己從規劃、提案、設計...當起團隊 PM 角色的專案😏', '「1999視覺化」<br>我們團隊第一次受政府單位委託做的視覺化專案，從發想、版面設計、呈現的手法都是自己來，最後選出3張精美的圖表，希望帶給大家不一樣的圖表意義。')
+      }
+    })
+  }
+
+  function setMobileMenuText(mainText, subText) {
+    $('.nav-main-text').html(mainText)
+    $('.nav-sub-text').html(subText)
   }
 })()

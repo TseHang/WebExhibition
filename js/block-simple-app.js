@@ -1,5 +1,6 @@
 ;(() => {
   const windowWidth = $(window).width()
+  const BREAKPOINT_MOBILE = 768
   const errorDistance = 150
   const data = {
     header: {
@@ -16,7 +17,7 @@
     },
   })
 
-  if (windowWidth >= 768) {
+  if (windowWidth >= BREAKPOINT_MOBILE) {
     $(window).scroll(function () {
       const scrollVal = $(this).scrollTop()
 
@@ -27,7 +28,7 @@
           $('.gogoGuide').removeClass('hover')
         }, 2500)
       } else if (scrollVal > errorDistance) {
-        $('.experience-talk').html('「抽獎系統」<br>「即時問卷系統」<br>都是一些平常可見的小工具，但這一次卻有一種化腐朽為神奇地感覺呢！')
+        $('.experience-talk').html('「抽獎系統」<br>「即時回饋系統」<br>都是一些平常可見的小工具，但這一次我們加入了現實生活中「實際操作該有的情感元素」，有一種化腐朽為神奇地感覺呢！')
       }
     })
 
@@ -44,5 +45,21 @@
     $('.section-board').mouseout(() => {
       $('.gogoGuide').removeClass('hover')
     })
+  } else {
+    $(window).scroll(function () {
+      const scrollVal = $(this).scrollTop()
+      const sectionContent = $('.section-content').offset().top
+
+      if (scrollVal <= sectionContent) {
+        setMobileMenuText('嗨，我叫艾克斯・貝利恩斯，要來玩玩嘛？', '一改網頁小工具只完成「功能」的習慣，加入活潑的頁面、互動性的元件，增加情緒，讓整個過程發現更多體驗的可能。')
+      } else {
+        setMobileMenuText('小改變，給予你不一樣的好體驗！', '「抽獎系統」<br>「即時回饋系統」<br>都是一些平常可見的小工具，但這一次我們加入了現實生活中「實際操作該有的情感元素」，有一種化腐朽為神奇地感覺呢！')
+      }
+    })
+  }
+
+  function setMobileMenuText(mainText, subText) {
+    $('.nav-main-text').html(mainText)
+    $('.nav-sub-text').html(subText)
   }
 })()

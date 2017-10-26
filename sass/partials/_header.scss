@@ -73,7 +73,7 @@ nav {
 .menu-mobile {
   position: fixed;
   top: 0px;
-  max-height: $nav-max-height;
+  height: $nav-max-height;
   margin-top: 0px;
   padding: 0 10%;
   width: 80%;
@@ -87,6 +87,27 @@ nav {
     padding: 0 1em;
     font-size: 0.8em;
     letter-spacing: 0;
+  }
+}
+
+.nav-sub-text-div {
+  @include transition(top .3s ease-in);
+  position: fixed;
+  top: -15rem;
+  left: 0;
+  width: 90%;
+  padding: 0 5%;
+  font-size: .8em;
+  color: map-get($color-basic, gray-dark);
+  background-color: white;
+  z-index: 99;
+  box-shadow: 0 1px 0px 0px rgba(128, 128, 128, 0.25);
+
+  > .nav-sub-text {
+    margin: .5em 0;
+  }
+  &.show {
+    top: 3rem;
   }
 }
 
@@ -129,23 +150,20 @@ nav {
   @include transition(all .2s ease-in);
   height: 0;
   overflow-y: hidden;
+  overflow-x: hidden;
 
   &.open {
     height: 40em;
-    padding-left: 3em;
+    padding-left: 3rem;
   }
 }
 
 .menu-link {
   @include transform(skewX(-6deg) skewY(-6deg));
   @include transition(all .1s linear);
-  width: 16em;
+  width: 13em;
   margin: 1.2em 2em 0 auto;
   cursor: pointer;
-
-  &:hover {
-    color: white;
-  }
 
   > h3 {
     margin: 1em 0 0;
@@ -154,6 +172,7 @@ nav {
 
   > p {
     margin: 0;
+    letter-spacing: 0;
   }
 }
 
@@ -168,10 +187,22 @@ nav {
   .menu-mobile {
     display: none;
   }
+
+  .nav-sub-text-div {
+    display: none;
+  }
+
   .menu {
     display: block;
     font-size: 1em;
     position: absolute;
+  }
+
+  .menu-link {
+    width: 16em;
+    &:hover {
+      color: white;
+    }
   }
 
   .section {

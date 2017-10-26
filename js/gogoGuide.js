@@ -4,6 +4,10 @@
     $('.fa-caret-down').toggleClass('rotate-to-up')
     $('.menu-lists-applications').toggleClass('open')
   })
+
+  $('.nav-main-text').click(() => {
+    $('.nav-sub-text-div').toggleClass('show')
+  })
   // ---------
 
   $('.gogoGuide').mouseleave(function () {

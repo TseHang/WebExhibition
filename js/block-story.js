@@ -1,5 +1,6 @@
 ;(() => {
   const windowWidth = $(window).width()
+  const BREAKPOINT_MOBILE = 768
   const errorDistance = 80
   const data = {
     header: {
@@ -16,13 +17,11 @@
     },
   })
 
-  if (windowWidth >= 768) {
+  if (windowWidth >= BREAKPOINT_MOBILE) {
     $(window).scroll(function () {
       const scrollVal = $(this).scrollTop()
-
       if (scrollVal < errorDistance) {
         $('.gogoGuide').addClass('hover')
-
         window.setTimeout(() => {
           $('.gogoGuide').removeClass('hover')
         }, 2000)
@@ -44,5 +43,21 @@
     $('.section-board').mouseout(() => {
       $('.gogoGuide').removeClass('hover')
     })
+  } else {
+    $(window).scroll(function () {
+      const scrollVal = $(this).scrollTop()
+      const sectionContent = $('.section-content').offset().top
+
+      if (scrollVal <= sectionContent) {
+        setMobileMenuText('嗨，我叫艾克斯・貝利恩斯，要來玩玩嘛？', '「講故事」，一直都是一個很吸引人且能溫暖人心的表達方式，這裡是主人最一開始的作品，也代表著主人最初想試著用網頁說一個好故事的心情...')
+      } else {
+        setMobileMenuText('這系列是我們最初也最喜歡的作品😊', '「Review2015」<br>「幸福的定義」<br> 利用 Reavel.js 做出一種類似網頁故事書的概念，為的就是更好地傳達整個故事的張力與情節。')
+      }
+    })
+  }
+
+  function setMobileMenuText(mainText, subText) {
+    $('.nav-main-text').html(mainText)
+    $('.nav-sub-text').html(subText)
   }
 })()

@@ -1,5 +1,6 @@
 ;(() => {
   const windowWidth = $(window).width()
+  const BREAKPOINT_MOBILE = 768
   const errorDistance = 80
   const data = {
     header: {
@@ -15,13 +16,12 @@
       header: data.header,
     },
   })
-  if (windowWidth >= 768) {
+  if (windowWidth >= BREAKPOINT_MOBILE) {
     $(window).scroll(function () {
       const scrollVal = $(this).scrollTop()
 
       if (scrollVal < errorDistance) {
         $('.gogoGuide').addClass('hover')
-
         window.setTimeout(() => {
           $('.gogoGuide').removeClass('hover')
         }, 2000)
@@ -38,5 +38,21 @@
     $('.section-board').mouseout(() => {
       $('.gogoGuide').removeClass('hover')
     })
+  } else {
+    $(window).scroll(function () {
+      const scrollVal = $(this).scrollTop()
+      const sectionContent = $('.section-content').offset().top
+
+      if (scrollVal <= sectionContent) {
+        setMobileMenuText('嗨，我叫艾克斯・貝利恩斯，要來玩玩嘛？', '這裡是「3D & VR」的世界，事實上 WebGL的技術已經發展到很擬真的地步，你有沒有像我一樣期待未來呢？')
+      } else {
+        setMobileMenuText('用手機玩看看吧！😀', '「3D & VR」<br>是近期一個很夯的話題，我們針對專題展場做了一點小應用，拿起手機試試看吧！')
+      }
+    })
+  }
+
+  function setMobileMenuText(mainText, subText) {
+    $('.nav-main-text').html(mainText)
+    $('.nav-sub-text').html(subText)
   }
 })()

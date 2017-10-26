@@ -11,7 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: .8em;
+  margin-bottom: .4em;
+  
 	> a{
     font-size: 2em;
     margin-right: .8em;
@@ -24,4 +26,11 @@
 	> p{
 		margin: 0px;
 	}
+}
+
+@media (min-width: map-get($break-point, table-l)) {
+  .footer-block {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }

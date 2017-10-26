@@ -1,5 +1,6 @@
 ;(() => {
   const windowWidth = $(window).width()
+  const BREAKPOINT_MOBILE = 768
   const errorDistance = 80
   const data = {
     header: {
@@ -16,7 +17,7 @@
     },
   })
 
-  if (windowWidth >= 768) {
+  if (windowWidth >= BREAKPOINT_MOBILE) {
     $(window).scroll(function () {
       const scrollVal = $(this).scrollTop()
 
@@ -39,5 +40,21 @@
     $('.section-board').mouseout(() => {
       $('.gogoGuide').removeClass('hover')
     })
+  } else {
+    $(window).scroll(function () {
+      const scrollVal = $(this).scrollTop()
+      const sectionContent = $('.section-content').offset().top
+
+      if (scrollVal <= sectionContent) {
+        setMobileMenuText('嗨，我叫艾克斯・貝利恩斯，要來玩玩嘛？', '我從沒幻想過自己可以寫出一款遊戲。<br>即使這次的掌蚊宗師不是那麼精緻與完整，但以從頭到尾由自己親手設計的遊戲來說，還是讓人愛不釋手呢！！')
+      } else {
+        setMobileMenuText('拜託你們如果玩到Bug不要怪我 嗚嗚😂', '這是Beta測試版遊戲！可能有點小Bug。可是千真萬確的是一款從配樂、設計稿、遊戲關卡、內容...都由我們一手包辦的遊戲，希望大家玩玩看哈哈 ～')
+      }
+    })
+  }
+
+  function setMobileMenuText(mainText, subText) {
+    $('.nav-main-text').html(mainText)
+    $('.nav-sub-text').html(subText)
   }
 })()
