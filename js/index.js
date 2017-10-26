@@ -3,21 +3,21 @@
   const windowHeight = $(window).height()
   const errorDistance = 100
 
-  $('#logo-experience').mouseover(function() {
-    $('.hintText').html('讓我來為您導覽吧！！')
+  $('#logo-experience').mouseover(() => {
+    $('.hintText').html('點一下，讓我來為您導覽吧！！')
   })
 
-  $('#logo-experience').mouseout(function() {
+  $('#logo-experience').mouseout(() => {
     $('.hintText').html('可以...摸摸我的頭嗎 >///<')
   })
 
-  $('#logo-experience').click(function() {
+  $('#logo-experience').click(() => {
     $('.section').css('display', 'block')
     $('html , body').animate(
       {
         scrollTop: $(window).height(),
       },
-      800
+      800,
     )
   })
 
@@ -52,7 +52,7 @@
       if (scrollVal < windowHeight * 2 - errorDistance) {
         $('.experience-talk').html('我是貼心小助手，艾克斯・貝利恩斯！請多多指教 😊')
       } else {
-        $('.experience-talk').html('這是我們所分成的六個主題，點擊框框可進入詳細內容。')
+        $('.experience-talk').html('這裡是我們所分成的六個主題，點擊框框看看每一個有趣的作品吧。')
       }
     })
   }
@@ -60,7 +60,7 @@
   $('#why-board').mouseover(function() {
     $('.gogoGuide').addClass('hover')
     $('.experience-talk').html(
-      '下一個世代...該怎麼樣才能讓人喜歡呢？ 恩...你喜歡 艾克斯・貝利恩斯 嗎？ 很高興認識大家！^_^'
+      '下一個世代...該怎麼樣才能讓人喜歡呢？ 恩...你喜歡 艾克斯・貝利恩斯 嗎？ 至少我很高興認識大家！嗯嗯^_^'
     )
   })
 
@@ -73,7 +73,7 @@
 
   $('#impact-board').mouseover(function() {
     $('.gogoGuide').addClass('hover')
-    $('.experience-talk').html('媽媽說：「做人，要學著謙虛！」，所以... 我們還要多努力！但還是看看吧 ～～')
+    $('.experience-talk').html('主人說：「生命，是長期而不段持續的累積。」，所以... 我們還要多努力！繼續積累作品！')
   })
 
   $('.board-card ').mouseout(function() {

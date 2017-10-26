@@ -34,5 +34,6 @@ module.exports = {
       "import/export": 2,
       "import/extensions": 1,
       "class-methods-use-this": ["error", { "exceptMethods": ["render"] }],
+      "func-names": 0,
     }
   };

@@ -88,7 +88,7 @@ header {
     text-align: center;
   }
 
-  .link {
+  .board-link {
     @extend %position_relative;
     display: flex;
     justify-content: center;
@@ -155,7 +155,7 @@ header {
       text-align: left;
     }
 
-    .link {
+    .board-link {
       justify-content: flex-start;
       font-size: 1.8em;
 
